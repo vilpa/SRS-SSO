@@ -1,0 +1,1 @@
+ java -jar /Users/Pavlo_Vilenchyk/Applications/StructurizrLite/structurizr-lite.war .

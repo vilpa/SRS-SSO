@@ -3,7 +3,8 @@
   "description" : "C4 Model for Target Solution Architecture",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2025-09-07T21:09:07Z",
+  "lastModifiedAgent" : "structurizr-ui",
+  "lastModifiedDate" : "2025-10-24T11:47:29Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -17,7 +18,7 @@
                 "id" : "448",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "39b404ef-21d1-4e8e-8e1b-c89a9b22134f"
+                  "structurizr.dsl.identifier" : "685eb08c-1f6a-4e36-9fd8-869b36848e7c"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -26,7 +27,7 @@
               "instances" : "1",
               "name" : "Azure API Management (APIM)",
               "properties" : {
-                "structurizr.dsl.identifier" : "f0144a00-9886-4de4-9e76-b6f676172895"
+                "structurizr.dsl.identifier" : "a4680460-b964-4f12-bdb0-9925d6cce164"
               },
               "tags" : "Element,Deployment Node,Microsoft Azure - API Management Services"
             }, {
@@ -37,7 +38,7 @@
                 "id" : "450",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "e8581970-5574-4f42-b2c9-d9bd6dcf3f19"
+                  "structurizr.dsl.identifier" : "f7774cd1-846a-48a8-9b69-8a0537ce05e0"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -46,7 +47,7 @@
               "instances" : "1",
               "name" : "Cosmos DB",
               "properties" : {
-                "structurizr.dsl.identifier" : "fddd3609-d36c-41fc-b8d2-5bb1a71f90c9"
+                "structurizr.dsl.identifier" : "14a39242-2f4d-487e-8c60-2c5a0bd56a13"
               },
               "tags" : "Element,Deployment Node,Azure Cosmos DB,Microsoft Azure - Azure Cosmos DB"
             } ],
@@ -55,7 +56,7 @@
             "instances" : "1",
             "name" : "APIM subnet",
             "properties" : {
-              "structurizr.dsl.identifier" : "b7e1eaf8-c7ec-44c3-b2a9-e6ddce102992"
+              "structurizr.dsl.identifier" : "1d383acd-a1eb-49f4-b55f-a9ddd9fc228f"
             },
             "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
           }, {
@@ -67,7 +68,7 @@
                 "id" : "453",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "0a6aae84-a532-46dd-84a6-6ceb0e82e235"
+                  "structurizr.dsl.identifier" : "e98e04be-b81d-4bac-8d8e-f779e7e4d927"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -76,7 +77,7 @@
               "instances" : "1",
               "name" : "AKS Cluster - ig-aks",
               "properties" : {
-                "structurizr.dsl.identifier" : "aab7dd76-1e12-4091-9238-2182c71c393c"
+                "structurizr.dsl.identifier" : "358accb9-55b3-4ae2-8617-2ed09887a2fb"
               },
               "tags" : "Element,Deployment Node,AKS,Kubernetes,Compute"
             } ],
@@ -85,7 +86,7 @@
             "instances" : "1",
             "name" : "Services subnet",
             "properties" : {
-              "structurizr.dsl.identifier" : "15501a4f-a1bc-41be-986b-670523a1f1bf"
+              "structurizr.dsl.identifier" : "36239b95-cd7b-4c4f-acb0-df2f0df196c5"
             },
             "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
           } ],
@@ -94,7 +95,7 @@
           "instances" : "1",
           "name" : "Virtual Network",
           "properties" : {
-            "structurizr.dsl.identifier" : "046eae41-3725-4bc7-92d1-ee2cdbde6663"
+            "structurizr.dsl.identifier" : "80ba4bb0-3b6b-40ce-a322-fabe27b53e90"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
         } ],
@@ -103,7 +104,7 @@
         "instances" : "1",
         "name" : "Azure Region - Primary (East US)",
         "properties" : {
-          "structurizr.dsl.identifier" : "9c5c09b0-8eaa-4b49-b719-0ac75429f9b2"
+          "structurizr.dsl.identifier" : "667bade3-b4b4-4049-a9b8-cb56ddbb00b3"
         },
         "tags" : "Element,Deployment Node,Microsoft Azure - Region Management"
       }, {
@@ -115,7 +116,7 @@
             "id" : "456",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "0c04627c-4024-44da-a127-602d238c6826"
+              "structurizr.dsl.identifier" : "aa856193-d1ab-4477-8f6b-d67b1e0b58f8"
             },
             "tags" : "Container Instance"
           } ],
@@ -124,7 +125,7 @@
           "instances" : "1",
           "name" : "Azure Monitor",
           "properties" : {
-            "structurizr.dsl.identifier" : "13e24333-5ab9-4555-bb56-b467dc087ad7"
+            "structurizr.dsl.identifier" : "676698c9-4897-45bd-802d-6355836eff1b"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Monitor"
         }, {
@@ -135,7 +136,7 @@
             "id" : "458",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "d7c19d09-e30f-456d-ac0a-7fbf83acd131"
+              "structurizr.dsl.identifier" : "2915540b-a09a-4db8-9804-8d982090fdc8"
             },
             "tags" : "Container Instance"
           } ],
@@ -144,7 +145,7 @@
           "instances" : "1",
           "name" : "Application Insights",
           "properties" : {
-            "structurizr.dsl.identifier" : "65734bd8-6e9c-42bf-a6df-57278a198c65"
+            "structurizr.dsl.identifier" : "32ef2fee-5e8f-4654-9181-dd188066ea52"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Application Insights"
         } ],
@@ -153,7 +154,7 @@
         "instances" : "1",
         "name" : "Monitoring",
         "properties" : {
-          "structurizr.dsl.identifier" : "df53dc54-b591-4b90-bc4c-ba1cb66f7e17"
+          "structurizr.dsl.identifier" : "fe997383-350b-4570-a438-349912666cce"
         },
         "tags" : "Element,Deployment Node"
       } ],
@@ -162,7 +163,7 @@
       "instances" : "1",
       "name" : "Azure Subscription - X-Customer",
       "properties" : {
-        "structurizr.dsl.identifier" : "6b7d9306-bc56-4b0b-a801-9a0186627dca"
+        "structurizr.dsl.identifier" : "135574c8-2344-41b7-94cb-c69dcb473bf0"
       },
       "tags" : "Element,Deployment Node,Azure,Microsoft Azure - Subscriptions"
     } ],
@@ -4618,7 +4619,8 @@
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Deployment-001",
+      "lastSavedView" : "SystemContext",
+      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "background" : "#08427b",
@@ -5178,7 +5180,7 @@
     } ],
     "systemContextViews" : [ {
       "automaticLayout" : {
-        "applied" : false,
+        "applied" : true,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -5186,72 +5188,108 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
+      "dimensions" : {
+        "height" : 2100,
+        "width" : 4550
+      },
       "elements" : [ {
         "id" : "1",
-        "x" : 0,
-        "y" : 0
+        "x" : 1000,
+        "y" : 165
       }, {
         "id" : "2",
-        "x" : 0,
-        "y" : 0
+        "x" : 1700,
+        "y" : 165
       }, {
         "id" : "3",
-        "x" : 0,
-        "y" : 0
+        "x" : 2400,
+        "y" : 165
       }, {
         "id" : "4",
-        "x" : 0,
-        "y" : 0
+        "x" : 3100,
+        "y" : 165
       }, {
         "id" : "5",
-        "x" : 0,
-        "y" : 0
+        "x" : 950,
+        "y" : 1465
       }, {
         "id" : "6",
-        "x" : 0,
-        "y" : 0
+        "x" : 1650,
+        "y" : 1515
       }, {
         "id" : "7",
-        "x" : 0,
-        "y" : 0
+        "x" : 2400,
+        "y" : 1515
       }, {
         "id" : "8",
-        "x" : 0,
-        "y" : 0
+        "x" : 3150,
+        "y" : 1515
       }, {
         "id" : "9",
-        "x" : 0,
-        "y" : 0
+        "x" : 3900,
+        "y" : 1515
       }, {
         "id" : "10",
-        "x" : 0,
-        "y" : 0
+        "x" : 200,
+        "y" : 1515
       }, {
         "id" : "31",
-        "x" : 0,
-        "y" : 0
+        "x" : 2025,
+        "y" : 865
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "SystemContext",
       "order" : 1,
       "relationships" : [ {
-        "id" : "241"
+        "id" : "241",
+        "vertices" : [ {
+          "x" : 650,
+          "y" : 1465
+        } ]
       }, {
-        "id" : "257"
+        "id" : "257",
+        "vertices" : [ {
+          "x" : 950,
+          "y" : 1465
+        } ]
       }, {
         "id" : "269"
       }, {
-        "id" : "392"
+        "id" : "392",
+        "vertices" : [ {
+          "x" : 2737,
+          "y" : 1469
+        } ]
       }, {
-        "id" : "395"
+        "id" : "395",
+        "vertices" : [ {
+          "x" : 2887,
+          "y" : 1210
+        } ]
       }, {
-        "id" : "398"
+        "id" : "398",
+        "vertices" : [ {
+          "x" : 3600,
+          "y" : 1465
+        } ]
       }, {
-        "id" : "401"
+        "id" : "401",
+        "vertices" : [ {
+          "x" : 3900,
+          "y" : 1465
+        } ]
       }, {
-        "id" : "441"
+        "id" : "441",
+        "vertices" : [ {
+          "x" : 1932,
+          "y" : 1265
+        } ]
       }, {
-        "id" : "58"
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 2192,
+          "y" : 1414
+        } ]
       }, {
         "id" : "61"
       }, {
