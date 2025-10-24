@@ -1,0 +1,13 @@
+The client currently operates multiple user identity stores across heterogeneous environments. User credentials and roles for SRSWeb and MyRental are stored in SQL Server databases, while BackOffice applications utilize a PostgreSQL schema named OS, and CRM users are managed within PostgreSQL schema aam. Additionally, Dynamics users are authenticated through the corporate Azure Entrata directory. Some MyRental users are already integrated with external SAML-based identity providers (IdPs).
+The target state aims to consolidate authentication and authorization flows under a unified, standards-based Single Sign-On (SSO) architecture. All internal SafeRent users will authenticate through the corporate Azure Entrata IdP (Azure AD), while client and partner users will authenticate using their own identity providers, with trust federation established through OpenID Connect (OIDC) and SAML 2.0 protocols. The modernized solution will enable secure, consistent, and standards-compliant access across all internal and external systems, ensuring simplified identity management and improved governance.
+Technologies already being used or planned for the modernization stream:
+Cloud: Google Cloud Platform (GCP)
+Identity Platform: Auth0 (as centralized SSO orchestration and user federation layer)
+Protocols: OIDC, OAuth 2.0, SAML 2.0, SCIM (for automated user provisioning)
+Backend Integration: .NET and OWIN middleware for token validation and claims transformation
+Frontend Applications: ASP.NET, Angular, React (depending on subsystem)
+VCS Provider: GitLab
+CI/CD: GitLab Pipelines with deployment to GCP Cloud Run and GKE
+Monitoring & Logging: DataDog, Azure Application Insights (for identity audit integration), and Splunk (for legacy systems)
+API Management: Apigee (for centralized API gateway, access control, and analytics)
+This strategy ensures unified authentication, cross-platform interoperability, and secure identity federation across all user domains, while maintaining flexibility for future cloud-native enhancements and enterprise compliance initiatives.

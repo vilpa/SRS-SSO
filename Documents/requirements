@@ -1,0 +1,59 @@
+4. Requirements
+4.1 Business Goals Associated with the Solution
+The primary business goal is to modernize and centralize authentication and authorization for all SafeRent applications, providing a unified and secure access experience for both internal and external users. The new solution must ensure compliance with industry standards, improve operational efficiency, and reduce maintenance costs associated with managing multiple user stores and authentication mechanisms.
+Key objectives include:
+Establishing a single identity management and authentication platform for internal and external users.
+Enhancing user experience by enabling seamless Single Sign-On (SSO) across all SafeRent applications.
+Strengthening security posture through centralized policy enforcement and federated identity integration.
+Reducing operational overhead by decommissioning redundant credential stores.
+Enabling secure interoperability with Property Management Systems (PMS) and third-party B2B integrators through standardized authentication mechanisms.
+Ensuring compliance with data privacy and security standards (e.g., SOC 2, GDPR).
+4.2 Functional Requirements
+Unified Authentication:
+ All internal SafeRent users must authenticate via the corporate Azure Entrata IdP (Azure AD).
+Federated Identity Support:
+ External (client and partner) users must authenticate via their own IdPs using OIDC or SAML 2.0 federation.
+Centralized Authorization:
+ Roles and claims must be managed and issued by Auth0, propagated through standardized tokens (JWT).
+User Provisioning:
+ Automated user lifecycle management must be supported via SCIM or equivalent APIs for synchronization with external IdPs.
+Integration with Existing Applications:
+ All legacy and modern applications (ASP.NET, Angular, React) must be integrated with the new SSO architecture without major redesign.
+Session Management:
+ Single logout (SLO) and session timeout policies must be consistent across all applications.
+Audit and Logging:
+ Authentication and authorization events must be centrally logged and traceable through DataDog and Azure Application Insights.
+API Security:
+ All exposed APIs must be protected through Apigee, enforcing OAuth 2.0 access tokens and rate-limiting policies.
+PMS Integration via MITS 3.0:
+ The solution must support secure interoperability with external Property Management Systems (PMS) such as Yardi Software and MRI Software using the MITS 3.0 standard.
+ Each MITS 3.0 request and response must include an authentication token (Auth0-issued JWT or equivalent) to ensure identity verification and access traceability across B2B integrations.
+ The authentication layer must provide a standardized token issuance and validation mechanism that can be consumed by PMS systems through existing APIs or middleware.
+4.3 Non-Functional Requirements
+Security:
+Authentication and token management must follow best practices for encryption, signing, and token expiry (JWT, OAuth 2.0).
+MFA (Multi-Factor Authentication) must be enforced for all administrative and internal user access.
+Scalability:
+The solution must support horizontal scaling within GCP (GKE and Cloud Run) to handle increased authentication and PMS integration loads without performance degradation.
+Availability & Reliability:
+System uptime must meet or exceed 99.9%.
+Redundant deployment across multiple GCP zones to ensure failover and continuity.
+Performance:
+Average authentication response time should not exceed 500 ms under normal load conditions.
+PMS MITS 3.0 integrations must process authentication tokens with minimal latency impact (<200 ms overhead).
+Interoperability:
+The solution must integrate seamlessly with Azure AD, Auth0, external IdPs, Apigee, and PMS providers (Yardi, MRI).
+Auditability & Compliance:
+All identity and B2B integration events must be auditable for compliance purposes, with logs retained per corporate policy.
+Maintainability:
+Configuration and policies must be managed through centralized repositories (GitLab) with automated deployment pipelines.
+4.4 Constraints
+All business applications are hosted in GCP; integration with Azure AD is limited to identity federation.
+Legacy systems must remain operational during transition; coexistence with existing authentication flows may be required temporarily.
+MITS 3.0 integration with external PMS vendors must conform to vendor-specific API schemas and operational constraints.
+Minimal disruption to existing user access during cut-over and migration phases is mandatory.
+4.5 Assumptions
+Azure Entrata IdP (Azure AD) is available and managed centrally by the corporate IT organization.
+External clients and PMS vendors can support OIDC, SAML 2.0, or token-based authentication under MITS 3.0 specifications.
+Existing user databases will be phased out or synchronized progressively into the centralized Auth0 solution.
+DataDog and Azure Application Insights licenses and integrations are available across all environments.

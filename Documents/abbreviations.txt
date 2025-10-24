@@ -1,0 +1,18 @@
+SSO (Single Sign-On):
+An authentication method that lets users access multiple applications with one set of login credentials, simplifying user management and improving security.
+JWT (JSON Web Token):
+A compact, digitally signed token format used to securely transmit identity and claims information between parties in authentication systems.
+OAuth (Open Authorization):
+An open standard for access delegation that lets users grant limited access to their resources on one service to another, without sharing passwords.
+OWIN (Open Web Interface for .NET):
+A standard interface that decouples .NET web applications from servers, enabling flexible middleware pipelines and simplified integration with authentication frameworks.
+OIDC (OpenID Connect):
+An identity layer built on OAuth 2.0 that adds authentication, allowing applications to verify user identity and obtain profile information via standardized tokens.
+SAML (Security Assertion Markup Language):
+An XML-based framework for exchanging authentication and authorization data between identity providers and service providers, commonly used for enterprise SSO.
+OpenID:
+An open standard for decentralized authentication that allows users to log into multiple sites using a single identity from an OpenID provider.
+SCIM (System for Cross-domain Identity Management):
+A standardized protocol that automates user identity creation, updates, and removal across different systems, simplifying lifecycle management in cloud environments.
+IdP (Identity Provider):
+A service that authenticates users and issues identity information or tokens consumed by other systems (service providers) to grant secure access.
