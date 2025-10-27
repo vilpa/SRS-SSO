@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2025-10-24T11:47:29Z",
+  "lastModifiedDate" : "2025-10-25T12:06:36Z",
   "model" : {
     "deploymentNodes" : [ {
       "children" : [ {
@@ -18,7 +18,7 @@
                 "id" : "448",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "685eb08c-1f6a-4e36-9fd8-869b36848e7c"
+                  "structurizr.dsl.identifier" : "84c3fd04-accc-43c3-ba31-03e38f7bfdcb"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -27,7 +27,7 @@
               "instances" : "1",
               "name" : "Azure API Management (APIM)",
               "properties" : {
-                "structurizr.dsl.identifier" : "a4680460-b964-4f12-bdb0-9925d6cce164"
+                "structurizr.dsl.identifier" : "f49e0ee8-1001-4f75-8679-bc24f0a58988"
               },
               "tags" : "Element,Deployment Node,Microsoft Azure - API Management Services"
             }, {
@@ -38,7 +38,7 @@
                 "id" : "450",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "f7774cd1-846a-48a8-9b69-8a0537ce05e0"
+                  "structurizr.dsl.identifier" : "5623ca14-44f1-442a-b4f4-f13db217d398"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -47,7 +47,7 @@
               "instances" : "1",
               "name" : "Cosmos DB",
               "properties" : {
-                "structurizr.dsl.identifier" : "14a39242-2f4d-487e-8c60-2c5a0bd56a13"
+                "structurizr.dsl.identifier" : "b597ab25-025a-4719-b393-b6b8a1024eae"
               },
               "tags" : "Element,Deployment Node,Azure Cosmos DB,Microsoft Azure - Azure Cosmos DB"
             } ],
@@ -56,7 +56,7 @@
             "instances" : "1",
             "name" : "APIM subnet",
             "properties" : {
-              "structurizr.dsl.identifier" : "1d383acd-a1eb-49f4-b55f-a9ddd9fc228f"
+              "structurizr.dsl.identifier" : "97ff249c-faa9-4298-a12e-5f474a4cf72a"
             },
             "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
           }, {
@@ -68,7 +68,7 @@
                 "id" : "453",
                 "instanceId" : 1,
                 "properties" : {
-                  "structurizr.dsl.identifier" : "e98e04be-b81d-4bac-8d8e-f779e7e4d927"
+                  "structurizr.dsl.identifier" : "1cfc0e0e-d2c6-41dd-b235-c93cf5c2009d"
                 },
                 "tags" : "Container Instance"
               } ],
@@ -77,7 +77,7 @@
               "instances" : "1",
               "name" : "AKS Cluster - ig-aks",
               "properties" : {
-                "structurizr.dsl.identifier" : "358accb9-55b3-4ae2-8617-2ed09887a2fb"
+                "structurizr.dsl.identifier" : "f8fe9d7f-fb3a-4027-aee3-de0dace21aed"
               },
               "tags" : "Element,Deployment Node,AKS,Kubernetes,Compute"
             } ],
@@ -86,7 +86,7 @@
             "instances" : "1",
             "name" : "Services subnet",
             "properties" : {
-              "structurizr.dsl.identifier" : "36239b95-cd7b-4c4f-acb0-df2f0df196c5"
+              "structurizr.dsl.identifier" : "9bc5c695-63d1-408b-bd7a-44e62fc381f6"
             },
             "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
           } ],
@@ -95,7 +95,7 @@
           "instances" : "1",
           "name" : "Virtual Network",
           "properties" : {
-            "structurizr.dsl.identifier" : "80ba4bb0-3b6b-40ce-a322-fabe27b53e90"
+            "structurizr.dsl.identifier" : "da2f0de4-c37b-4eb4-9e7d-4fc3e9b4a3ec"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Virtual Networks"
         } ],
@@ -104,7 +104,7 @@
         "instances" : "1",
         "name" : "Azure Region - Primary (East US)",
         "properties" : {
-          "structurizr.dsl.identifier" : "667bade3-b4b4-4049-a9b8-cb56ddbb00b3"
+          "structurizr.dsl.identifier" : "a5c8806e-7bca-49c9-af89-0519b8bb046f"
         },
         "tags" : "Element,Deployment Node,Microsoft Azure - Region Management"
       }, {
@@ -116,7 +116,7 @@
             "id" : "456",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "aa856193-d1ab-4477-8f6b-d67b1e0b58f8"
+              "structurizr.dsl.identifier" : "16f97f51-08db-47ba-bbdf-59924a994d78"
             },
             "tags" : "Container Instance"
           } ],
@@ -125,7 +125,7 @@
           "instances" : "1",
           "name" : "Azure Monitor",
           "properties" : {
-            "structurizr.dsl.identifier" : "676698c9-4897-45bd-802d-6355836eff1b"
+            "structurizr.dsl.identifier" : "d9346d81-e20a-4889-8f7e-439d7de22f58"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Monitor"
         }, {
@@ -136,7 +136,7 @@
             "id" : "458",
             "instanceId" : 1,
             "properties" : {
-              "structurizr.dsl.identifier" : "2915540b-a09a-4db8-9804-8d982090fdc8"
+              "structurizr.dsl.identifier" : "1a29fbc1-08ff-4743-8b6a-bc7b68b35024"
             },
             "tags" : "Container Instance"
           } ],
@@ -145,7 +145,7 @@
           "instances" : "1",
           "name" : "Application Insights",
           "properties" : {
-            "structurizr.dsl.identifier" : "32ef2fee-5e8f-4654-9181-dd188066ea52"
+            "structurizr.dsl.identifier" : "2f03576f-6bea-410d-8e77-d94cca07fff6"
           },
           "tags" : "Element,Deployment Node,Microsoft Azure - Application Insights"
         } ],
@@ -154,7 +154,7 @@
         "instances" : "1",
         "name" : "Monitoring",
         "properties" : {
-          "structurizr.dsl.identifier" : "fe997383-350b-4570-a438-349912666cce"
+          "structurizr.dsl.identifier" : "29925141-bdf4-4d26-832e-7d00de0bdaaa"
         },
         "tags" : "Element,Deployment Node"
       } ],
@@ -163,7 +163,7 @@
       "instances" : "1",
       "name" : "Azure Subscription - X-Customer",
       "properties" : {
-        "structurizr.dsl.identifier" : "135574c8-2344-41b7-94cb-c69dcb473bf0"
+        "structurizr.dsl.identifier" : "d84a701a-506b-45a4-8ede-9158acc4109b"
       },
       "tags" : "Element,Deployment Node,Azure,Microsoft Azure - Subscriptions"
     } ],
