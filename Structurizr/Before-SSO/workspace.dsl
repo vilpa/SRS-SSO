@@ -11,9 +11,9 @@ container <name> [description] [technology] [tags] {
         customer = person "Applicant" "Applicant or tenant undergoing screening"
         support = person "Support" "SafeRent Solutions support team assisting users"
         accmanager = person "Account Manager" "Client relationship and account representative"
-        agent = person "MLS agent" "Licensed real estate listing representative."
+        mlsagent = person "MLS agent" "Licensed real estate listing representative"
         pmsuser = person "PMS user" "Manages property operations and tenant activities"
-        iuser = person "internet user" "internet user with public, unauthenticated application access."
+        iuser = person "internet user" "internet user with public, unauthenticated application access"
 
         yardi = softwareSystem "Yardi" "Property management and accounting software solution" "External PMS system"
         mri = softwareSystem "MRI" "Enterprise real estate management and analytics platform" "External PMS system"
@@ -21,12 +21,11 @@ container <name> [description] [technology] [tags] {
         mls = softwareSystem "MLS" "Platform for sharing real estate listings" "External PMS system"
         dyn = softwareSystem "Dynamics" "SafeRent CRM"
 
-        agent -> mls
-        pmsuser -> yardi
-        pmsuser -> appfolio
-        pmsuser -> mri
-        support -> dyn
-        accmanager -> dyn
+        pmsuser -> yardi "verifies identity, Forms"
+        pmsuser -> appfolio "verifies identity, Forms"
+        pmsuser -> mri "verifies identity, Okta"
+        support -> dyn "verifies identity, SRS Azure"
+        accmanager -> dyn "verifies identity, SRS Azure"
 
         srssystem = softwareSystem "SafeRent Platform" {
             description "Centralized system for rental screening and identity verification"
@@ -34,38 +33,38 @@ container <name> [description] [technology] [tags] {
             group "SRS" {
                 srsweb = container "SRS Web" {
                     technology ".NetFramework 4.8"
-                    description "Role-based access, SSO integration"
-                    tags "Core, Utility, Shared"
+                    description "Forms authentication, Role-based access on top of .Net Access DB"
+                    tags "SRSWeb"
 
                 }
                 srsb2b = container "SRS B2B" {
                     technology ".NetFramework 4.8"
                     description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
-                    tags "Core, Utility, Shared"                    
+                    tags "SRSWeb"                    
                 }
                 srsdyn = container "Dynamics API" {
                     technology ".NET"
-                    description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
-                    tags "Core, Utility, Shared"        
+                    description "Internal API to export transactions, clients, billing info"
+                    tags "Dynamics"        
                 }
                 mp = container "SRS Monitoring Portal" {
                     technology ".NetFramework 4.8"
-                    description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
-                    tags "Core, Utility, Shared"                    
+                    description "SRSWeb instance for internal users"
+                    tags "MP"                    
                 }
                 mpf = container "SRS Monitoring SPA" {
                     technology "Angular 17"
-                    description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
-                    tags "Core, Utility, Shared"                    
+                    description "Web UI"
+                    tags "MP"                    
                 }
                 mpb = container "SRS Monitoring API" {
                     technology ".NET 8"
-                    description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
+                    description "API to provide transactions details"
                     tags "Core, Utility, Shared"                    
                 }
                 regaccessdb = container "RegAccess users DB" {
                     technology "SQLServer"
-                    description "Credentials, Permissions, Profiles"
+                    description "Credentials, Permissions, Profiles, ASP.NET Sessions"
                     tags "Database"
                 }
             }
@@ -91,7 +90,7 @@ container <name> [description] [technology] [tags] {
                 }
                 pportal = container "Permissions Manager" {
                     technology ".NET 8"
-                    description "MyRental entry point"
+                    description "Admin portal for centralized user and access management to backoffice apps"
                     tags "Core, Utility, Shared"                    
                 }
                 dm = container "CBP Data" {
@@ -101,17 +100,17 @@ container <name> [description] [technology] [tags] {
                 }
                 crimsafeui = container "CBP processor" {
                     technology ".NET 8"
-                    description "MyRental entry point"
+                    description "Criminal data processor"
                     tags "Core, Utility, Shared"                    
                 }
                 ts = container "Vendor Routing" {
                     technology ".NET 8"
-                    description "MyRental entry point"
+                    description "Set data vendors parameters, priority, properties mapping"
                     tags "Core, Utility, Shared"                    
                 }
                 mt = container "Transactions Monitoring Portal" {
                     technology ".NET 8"
-                    description "MyRental entry point"
+                    description "CCredit/Crim bureaus row data tracer"
                     tags "Core, Utility, Shared"                    
                 }
                 osdb = container "BO users DB" {
@@ -121,43 +120,45 @@ container <name> [description] [technology] [tags] {
                 }
             }
 
-            srsweb -> regaccessdb "save credentials, permissions"
-            appsmyrental -> regaccessdb "save  credentials, permissions"
-            regaccessdb -> srsweb "get credentials, permissions"
-            regaccessdb -> appsmyrental "get credentials, permissions"
-            client -> srsweb
-            customer -> appsmyrental
-            sll -> appsmyrental
-            support -> srsweb
-            support -> mpf
-            accmanager -> srsweb
-            iuser -> mrkt
-            pmsuser -> srsweb
+            srsweb -> regaccessdb "saves credentials, permissions"
+            appsmyrental -> regaccessdb "saves credentials, permissions"
+            regaccessdb -> srsweb "gets credentials, permissions"
+            regaccessdb -> appsmyrental "gets credentials, permissions"
+            client -> srsweb "verifies identity, Forms, validates access, SRS"
+            customer -> appsmyrental "verifies identity, Forms, validates access, MR"
+            sll -> appsmyrental "verifies identity, Forms, validates access, MR"
+            support -> srsweb "verifies identity, Forms, validates access, SRS"
+            support -> mpf "verifies identity, Forms, validates access, MP"
+            accmanager -> srsweb "verifies identity, Forms, validates access, SRS"
+            iuser -> mrkt "public access"
+            pmsuser -> srsweb "verifies identity, Forms, validates access, SRS"
 
-            yardi -> srsb2b
-            mri -> srsb2b
-            appfolio -> srsb2b
-            mls -> appsmyrental
-            dyn -> srsdyn
+            yardi -> srsb2b "sends credentials, MITS XML"
+            mri -> srsb2b "sends credentials, MITS XML"
+            appfolio -> srsb2b "sends credentials, MITS XML"
+            mls -> appsmyrental "verifies identity, SAML, validates access, MR"
+            dyn -> srsdyn "verifies App identity, Azure M2M"
 
-            boportal -> pportal
-            boportal -> dm
-            boportal -> crimsafeui
-            boportal -> ts
-            boportal -> mt
+            boportal -> pportal "verifies identity, SPA token"
+            boportal -> dm "verifies identity, SPA token"
+            boportal -> crimsafeui "verifies identity, SPA token"
+            boportal -> ts "verifies identity, SPA token"
+            boportal -> mt "verifies identity, SPA token"
             
-            osdb -> boportal "get credentials, permissions"
-            pportal -> osdb "save credentials, permissions"
+            osdb -> boportal "gets credentials, permissions"
+            pportal -> osdb "persists credentials, permissions"
 
-            support -> boportal
-            accmanager -> boportal
+            support -> boportal "verifies identity Forms, validates access, MR"
+            accmanager -> boportal "verifies identity Forms, validates access, MR"
+
+            mlsagent -> mls "verifies identity, SAML"
+            mlsagent -> mrkt "public access"
         }
     }
 
     views {
         systemcontext srssystem "SystemContext" {
             include *
-            autolayout
         }
         
         container srssystem "ContainerDiagram" {
