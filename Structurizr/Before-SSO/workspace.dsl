@@ -20,6 +20,7 @@ container <name> [description] [technology] [tags] {
         appfolio = softwareSystem "AppFolio" "Cloud-based property management and leasing software" "External PMS system"
         mls = softwareSystem "MLS" "Platform for sharing real estate listings" "External PMS system"
         dyn = softwareSystem "Dynamics" "SafeRent CRM"
+        eid = softwareSystem "Microsoft Entra ID" "SafeRentSolutions tenant" "Azure" 
 
         pmsuser -> yardi "verifies identity, Forms"
         pmsuser -> appfolio "verifies identity, Forms"
@@ -32,33 +33,29 @@ container <name> [description] [technology] [tags] {
 
             group "SRS" {
                 srsweb = container "SRS Web" {
-                    technology ".NetFramework 4.8"
+                    technology ".NetFramework 4.8, ASP.NET Forms"
                     description "Forms authentication, Role-based access on top of .Net Access DB"
                     tags "SRSWeb"
 
                 }
                 srsb2b = container "SRS B2B" {
-                    technology ".NetFramework 4.8"
+                    technology ".NetFramework 4.8, ASP.NET, Web API"
                     description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
                     tags "SRSWeb"                    
                 }
                 srsdyn = container "Dynamics API" {
-                    technology ".NET"
+                    technology ".NET, Web API"
                     description "Internal API to export transactions, clients, billing info"
                     tags "Dynamics"        
                 }
-                mp = container "SRS Monitoring Portal" {
-                    technology ".NetFramework 4.8"
-                    description "SRSWeb instance for internal users"
-                    tags "MP"                    
-                }
+
                 mpf = container "SRS Monitoring SPA" {
                     technology "Angular 17"
                     description "Web UI"
-                    tags "MP"                    
+                    tags "Web Browser, MP"                    
                 }
                 mpb = container "SRS Monitoring API" {
-                    technology ".NET 8"
+                    technology ".NET, Web API"
                     description "API to provide transactions details"
                     tags "Core, Utility, Shared"                    
                 }
@@ -69,48 +66,81 @@ container <name> [description] [technology] [tags] {
                 }
             }
 
+            mpf -> mpb "sends auth token"
+
             group "MyRental" {
                 mrkt = container "Markening Portal" {
-                    technology ".NET 8"
+                    technology ".NetFramework 4.8, ASP.NET, MVC"
                     description "MyRental entry point"
                     tags "Core, Utility, Shared"                    
                 }
                 appsmyrental = container "MyRental" {
-                    technology ".NetFramework 4.8"
+                    technology ".NetFramework 4.8, ASP.NET, MVC"
                     description "MyRental screening portal"
                     tags "Core, Utility, Shared"      
                 }
             }
 
             group "BackOffice" {
+                
+                boportalui = container "Backoffice portal UI" {
+                    technology "Angular 17"
+                    description "Backoffice entry point"
+                    tags "Web Browser"                    
+                }
                 boportal = container "Backoffice portal" {
                     technology ".NET 8"
                     description "Backoffice entry point"
                     tags "Core, Utility, Shared"                    
+                }
+                pportalui = container "Permissions Manager UI" {
+                    technology "Angular 17"
+                    description "Admin portal for centralized user and access management to backoffice apps"
+                    tags "Web Browser"                    
                 }
                 pportal = container "Permissions Manager" {
                     technology ".NET 8"
                     description "Admin portal for centralized user and access management to backoffice apps"
                     tags "Core, Utility, Shared"                    
                 }
+                dmui = container "CBP Data UI" {
+                    technology "Angular 17"
+                    description "CBP Data management portal"
+                    tags "Web Browser"                    
+                }
                 dm = container "CBP Data" {
                     technology ".NET 8"
                     description "CBP Data management portal"
                     tags "Core, Utility, Shared"                    
+                }
+                crimsafeuiui = container "CBP processor UI" {
+                    technology "Angular 17"
+                    description "Criminal data processor"
+                    tags "Web Browser"                    
                 }
                 crimsafeui = container "CBP processor" {
                     technology ".NET 8"
                     description "Criminal data processor"
                     tags "Core, Utility, Shared"                    
                 }
+                tsui = container "Vendor Routing UI" {
+                    technology "Angular 17"
+                    description "Set data vendors parameters, priority, properties mapping"
+                    tags "Web Browser"                    
+                }
                 ts = container "Vendor Routing" {
                     technology ".NET 8"
                     description "Set data vendors parameters, priority, properties mapping"
                     tags "Core, Utility, Shared"                    
                 }
+                mtui = container "Transactions Monitoring Portal UI" {
+                    technology "Angular 17"
+                    description "Credit/Crim bureaus row data tracer"
+                    tags "Web Browser"                    
+                }
                 mt = container "Transactions Monitoring Portal" {
                     technology ".NET 8"
-                    description "CCredit/Crim bureaus row data tracer"
+                    description "Credit/Crim bureaus row data tracer"
                     tags "Core, Utility, Shared"                    
                 }
                 osdb = container "BO users DB" {
@@ -139,17 +169,28 @@ container <name> [description] [technology] [tags] {
             mls -> appsmyrental "verifies identity, SAML, validates access, MR"
             dyn -> srsdyn "verifies App identity, Azure M2M"
 
-            boportal -> pportal "verifies identity, SPA token"
-            boportal -> dm "verifies identity, SPA token"
-            boportal -> crimsafeui "verifies identity, SPA token"
-            boportal -> ts "verifies identity, SPA token"
-            boportal -> mt "verifies identity, SPA token"
+            boportalui -> pportalui "redirects with permissions"
+            boportalui -> dmui "redirects with permissions"
+            boportalui -> crimsafeuiui "redirects with permissions"
+            boportalui -> tsui "redirects with permissions"
+            boportalui -> mtui "redirects with permissions"
+            boportal -> eid "validates token"
+
+            pportalui -> pportalui "gets local auth token"
+            dmui -> dm "gets local auth token"
+            crimsafeuiui -> crimsafeui "gets local auth token"
+            tsui -> ts "gets local auth token"
+            mtui -> mt "gets local auth token"
             
             osdb -> boportal "gets credentials, permissions"
             pportal -> osdb "persists credentials, permissions"
 
-            support -> boportal "verifies identity Forms, validates access, MR"
-            accmanager -> boportal "verifies identity Forms, validates access, MR"
+            support -> boportalui "sends id token"
+            boportalui -> boportal "verifies identity, validates access"
+            accmanager -> boportalui "sends id token"
+
+            support -> eid "verifies identity, gets token"
+            accmanager -> eid "verifies identity, gets token"
 
             mlsagent -> mls "verifies identity, SAML"
             mlsagent -> mrkt "public access"
