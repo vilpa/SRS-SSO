@@ -1,0 +1,120 @@
+Before I draft your self-presentation for the EPAM Solution Architect assessment, 
+could you please confirm or provide a few key details so I can tailor it to your background and goals? Specifically:
+
+Professional background summary – 
+    your main experience areas (e.g., software engineering, enterprise architecture, cloud, data, etc.).
+    Software modernization by migrating to new environments platform.
+    I have been working on SafeRent Solutions project as Lead Software Engineer 9 years.
+    Our EPAM Team with SafeRent Solutions engineers designed and implemented three big projects:
+    (1) Migration core application from AS400 mainframe to Microservices 
+    (2) Isolate infrastructure and migrate to SaferentSolutions DataCenter
+    (3) Migration from DataCenter to Google Cloud platform
+
+Key technologies – 
+    your strongest technical stack (e.g., AWS, Azure, Java, .NET, Python, microservices, etc.).
+    .NET, GCP, Azure, Apigee, microservices, Python, Pentaho, SSIS
+    DB MSSQL, DB PostgreSQL, AS400, Databricks
+
+Notable projects – 
+    any significant projects or achievements you'd like to highlight (especially ones that show leadership, architecture design, or system scalability).
+As a software architect, I designed and implemented with the Team:
+-- Migration project from AS400 screnns and DB into Single Page Applications, Microserices, PostgreSQL and SQL Server.
+-- Migration billing system from AS400 into Pentaho workflows
+-- Migration AS400 jobs into SSIS packages pipelines with supporting modern approaches in Availability Group.
+-- Integrtion billing system with Cloud Sage Intacct, build analytics pipelines in Azure Factory
+-- Integration Dynamics 365 Cutomer Portal with internal Client onboarding Application
+-- SSO modernization based on Auth0 solutions
+-- Migration Pentaho billling system into Databricks Solutions, integrtion with Sage.
+    
+
+EPAM context – 
+    is this assessment internal (you already work with EPAM) or external (you’re applying)?
+    I work with EPAM
+
+Preferred tone – 
+    formal corporate (for executive reviewers), or conversational and engaging (for interview-style presentations)?
+    for interview-style presentations
+
+Format preference – 
+    do you want this as a written speech/presentation text (like you'd say it aloud), or formatted like a document with sections (e.g., “About Me,” “Professional Journey,” “Technical Expertise,” etc.)?
+    Document with sections.
+
+
+
+
+
+
+
+Architectural Scope & Leadership
+Do you currently lead architecture decisions for multiple teams or specific domains 
+I lead decisions for one team for specific domains: integration, data.
+
+How do you usually interact with stakeholders — for instance, do you define solution blueprints, align architecture with business strategy, or manage delivery teams?
+I define solution blueprints to discuss it with customers enterprise architect.
+
+Key Strengths & Focus Areas
+What do you consider your strongest “architectural” competencies? 
+(e.g., cloud migration strategy, integration patterns, scalability design, modernization roadmap design, etc.)
+Integration patterns, scalability design.
+
+Would you like me to emphasize technical depth (e.g., system design and platform selection) or leadership/strategic vision (e.g., aligning architecture with business goals)?
+System design and platform selection
+
+Certifications or Recognitions
+Azure Developer
+
+Soft Skills & Philosophy
+Let's skip this part
+
+Assessment Context
+Do you know whether your EPAM Solution Architect assessment will focus more on technical deep-dive (e.g., architecture case study) or presentation/interview (e.g., self-introduction and business alignment)?
+Would you like your self-presentation to include a short “vision statement” — e.g., how you see architecture enabling business success or technology excellence at EPAM?
+It will focus more on technical deep-dive
+
+
+Microsoft SQL Server 2019 / 2022
+    Primary data storage for transactional and analytical data.
+    Configured with AlwaysOn Availability Groups for high availability and disaster recovery.
+SQL Server Integration Services (SSIS)
+    Core ETL engine for data extraction, transformation,
+    and loading between legacy CoreLogic and SafeRent environments.
+    Includes enhanced retry and error handling mechanisms for resilience.
+Azure Data Factory (ADF)** *(for future-state integration)
+    Used for orchestrating and monitoring cross-environment ETL pipelines and third-party integrations.
+SFTP / FTPS
+    Secure file-based data exchange with external vendors and property management systems (PMS).
+REST / SOAP APIs
+    Data exchange interfaces for B2B integrations (e.g., Yardi, MRI Software).
+    Azure Entra ID (Microsoft Identity Platform)
+    Centralized authentication and SSO management for internal and external users.
+DataDog,Splunk
+    Used for observability, performance tracking, and ETL error monitoring.
+GitLab CI/CD Pipelines
+    Automated build, deployment, and quality verification. Includes integration with static code analysis and vulnerability scanning.
+
+
+
+SafeRent Data Center Migration to Google Cloud Platform (GCP)
+The SafeRent Data Center Migration project focused on the complete transition of SafeRent Solutions’ on-premise infrastructure and applications from CoreLogic-managed data centers to the Google Cloud Platform (GCP). The migration aimed to modernize hosting architecture, reduce operational costs, enhance scalability, and improve reliability across critical business systems including authentication services, ETL pipelines, vendor integrations, and data analytics environments.
+The program included modernization of existing workloads, re-platforming of legacy applications, and reconfiguration of data services for cloud-native operations. Special attention was given to the migration of secure data pipelines, multi-environment CI/CD deployment processes, and high-availability configurations using GCP-native services.
+
+Goals
+Modernize Infrastructure: Transition from on-premises VMs and databases to GCP-managed services (Compute Engine, Cloud SQL, Cloud Storage).
+Increase Scalability and Resilience: Implement autoscaling and load balancing through Kubernetes Engine (GKE) and regional replication.
+Enhance Security and Compliance: Migrate secrets, certificates, and encryption keys to Google Secret Manager and adopt IAM-based access control.
+Optimize Data Processing: Move ETL and batch jobs to Cloud Dataflow and Cloud Composer (Airflow) for orchestrated workflow execution.
+Enable Observability: Integrate DataDog and Google Cloud Operations Suite (Stackdriver) for unified monitoring and logging.
+Approach
+Assessment and Planning: Conducted full workload inventory and dependency analysis across all applications and databases.
+Phased Migration: Implemented lift-and-shift for lower-risk components followed by re-platforming of high-throughput systems (ETL and APIs).
+Hybrid Deployment Phase: Temporarily maintained VPN tunnels and VPC peering between on-prem and GCP to ensure zero downtime.
+Modernization of ETL Pipelines: Reimplemented SSIS jobs in Cloud Dataflow, enhancing retry and failure-handling logic.
+Database Modernization: Migrated SQL Server Availability Groups to Cloud SQL (SQL Server) with regional replicas and automated backup policies.
+Infrastructure-as-Code: Deployed infrastructure components using Terraform and GitLab CI/CD pipelines for repeatable provisioning.
+Security Reinforcement: Applied VPC Service Controls, private service endpoints, and centralized secret storage in GCP Secret Manager.
+Outcomes
+99.95% service uptime achieved post-migration through GKE-managed autoscaling and regional redundancy.
+30% reduction in operational cost due to optimized resource utilization and managed services.
+Improved deployment velocity with fully automated GitLab pipelines integrated with Terraform and Kubernetes.
+Enhanced observability through centralized monitoring dashboards and incident alerting via DataDog and Stackdriver.
+Decommissioning of on-prem data center successfully completed within migration timeline, with full continuity of ETL and business operations.

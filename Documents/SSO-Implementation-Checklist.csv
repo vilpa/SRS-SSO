@@ -1,0 +1,191 @@
+﻿,Analyze,,,
+#,Item,Guidance,Completed (or NA),Notes.
+Architecture,,,,
+AC10,"Determine tenant naming
+Create a unique name convention for each Auth0 tenant",Accounts and Tenants,,
+AC20,"Determine production tenant provision
+Provision an Auth0 production tenant for each user domain you need to support",Tenant Settings Best Practices,,
+AC30,"Provision a development tenant for each production tenant
+Provision an Auth0 development tenant for each production tenant you have defined",Set Up Multiple Environments,,
+AC40,"Provision a staging tenant for each production tenant
+Provision an Auth0 test tenant for each production tenant you have defined",Set Up Multiple Environments,,
+AC50,"Custom domain naming
+Apply custom domain naming to each Auth0 tenant to provide branding and security benefits",Custom Domains,,
+AC60,"Associate tenants with your account
+Contact your Auth0 representative or the Auth0 Support Center (at http://bit.ly/2V5mViG to ensure all tenants are associated with your Auth0 contractual agreement for feature permission parity",Child Tenant Request Process,,
+AC70,"Extensions
+Review use of Auth0 Extensions to customize and extend Auth0 beyond base product capabilities",Extensions,,
+User Provisioning,,,,
+AC100,"Identity provisioning via database connections
+Review use of Auth0 as an identity provider to provide sign-up and user identification",Database Identity Providers,,
+AC110,"Identity migration
+Review use of Auth0 as an identity provider to provide user identification by migrating from your existing legacy identity store",Migrating to Auth0 from a Custom User Store,,
+AC120,"Existing identity storage
+Review use of Auth0 to provide user identification directly from your existing (legacy) identity store",Authenticate Users Using Your Database,,
+AC130,"Third Party identity providers
+Review use of third-party social identity providers in support of user provisioning",Social Identity Providers,,
+AC140,"Hooks
+Review use of Auth0 Hook extensibility to further customize and extend Auth0's base product capabilities ",Hooks,,
+User Authentication,,,,
+AC200,"Universal Login
+Review Auth0 Universal Login in support of Single Sign On (SSO) and industry best practice",Universal Login,,
+,Design,,,
+#,Item,Guidance,Completed (or NA),Notes
+Architecture,,,,
+DC10,"Custom domain naming
+Apply custom domain naming to each Auth0 tenant to provide branding and security benefits",Custom Domains,,
+User Provisioning,,,,
+DC100,"User self sign up
+Leverage Auth0 database connection for storing the user id, password, and (optional) username information collected during the sign-up process",Database Identity Providers,,
+DC110,"User migration
+Use Auth0 database connection to provide a secure Auth0 hosted replacement for your legacy identity store (not applicable if you will not be migrating users)",User Migration,,
+DC120,"Existing identity storage
+Review use of Auth0 to provide user identification directly from your existing (legacy) identity store",Authenticate Users Using Your Database,,
+User Authentication,,,,
+DC200,"Application integration
+Follow the Quickstart that best aligns with your technology stack in order to obtain design guidance for your specific application.",Quickstarts,,
+DC220,"Universal Login
+The most secure way to authenticate users via use of browser redirect workflow",Universal Login,,
+DC230,"Universal Login customization
+Simple customization as well as advanced customization provides guidance on a range of capabilities that support custom branding and other UI design requirements",Simple Login Customization,,
+,,Advanced Login Customization,,
+DC240,"Password reset customization
+Provide Change Password customization to suit your organisation’s branding as well as other UI design requirements",Edit Password Reset Page,,
+DC250,"Guardian Multi-factor page customization
+Customize the Guardian Mult-factor page (not applicable if you are not using multi-factor authentication)",Guardian Multi-factor Login Page,,
+DC260,"Social connection registration
+Register for each social identity provider to mitigate limitations of out-of-box Auth0 Developer Keys (not applicable if you are not using social connections)",Test Social Connections with Auth0 Developer Keys,,
+DC270,"Custom social connection
+Customize a connection for a ocial provider not supported out-of-box (not applicable if you are not using social connections)",Custom Social Connections,,
+DC280,"Auth0 as a SAML service provider
+Review design considerations for using Auth0 as a SAML service provider (not applicable if you do not need to support a SAML service provider context)",SAML Considerations for Using Auth0 as Service Provider,,
+,Build,,,
+#,Item,Guidance,Completed (or NA),Notes
+Architecture,,,,
+BC10,"Rules best practice aligned
+Review Rule implementation for alignment with best practice guidance for configuration (not applicable if you are not using Rule Extensibility)",Rules Security Recommendations,,
+BC14,"Hooks best practice aligned
+Review use of Auth0 Hook extensibility to further customize and extend Auth0's base product capabilities ",Hooks,,
+BC16,"Custom database scripts best practice aligned
+Review Custom Database Script implementation for alignment with best practice (not applicable if you are not using custom database or automatic user migration functionality)",Add Custom Database Configuration Parameters,,
+BC30,"Real-time webtask logging
+Enable real-time webtask logging for extensibility debugging (not applicable if you are not using Auth0 extensibility features such as Rules, Hooks or custom database)",Real-time Webtask Logs,,
+BC40,"CI (Continuous Integration)
+Regular integration and test Auth0 of custom extensibility (et-al) prior to automatic deployment (also applicable if you are not using a CI/CD pipeline)",Continuous Deployment Pipelines and Open Source Node.js Web Apps,,
+User Provisioning,,,,
+BC100,"Custom database scripts best practice aligned
+Review Custom Database Script implementation for alignment with best practice guidance (not applicable if you are not using custom database or automatic user migration functionality)",Create Database Action Scripts,,
+BC110,"Hooks best practice aligned
+Implementation for Hooks aligned with best practice guidance provided here. Not applicable if you are not using either of the the Pre-User-Registration or the Post-User-Registration Hook extensibility points.",Hooks,,
+User Authentication,,,,
+BC200,"Application integration
+Follow the Quickstart that best aligns with your technology stack in order to obtain design guidance for your specific application.",Quickstarts,,
+BC210,"Application isolation
+Review guidance for more information regarding application definitions in Auth0 and to mitigate reuse client identifiers or credentials across different applications",Applications,,
+BC220,"Auth0 Authentication SDK
+Follow guidance to make use of the Auth0 SDK that best aligns with your technology stack rather than calling the Auth0 Authentication API directly",Libraries,,
+BC230,"Auth0 Authentication API rate limit handling
+Handling of HTTP Status Code 429s implemented and followed the guidance provided here concerning Auth0 Rate Limit metrics for the Authentication API",Rate Limit Policy for Auth0 APIs,,
+,Test,,,
+#,Item,Guidance,Completed (or NA),Notes
+Architecture,,,,
+TC10,"Session lifetime limits for Single Sign On (SSO) configured
+Configure session lifetime limits for SSO",Configure Session Lifetime Limits for SSO,,
+TC20,"Tenant wide allowed logout URLs defined
+Specify logout redirect URLs and not defined as localhost (not mandatory, but it is a best practice recommendation to provide user logout functionality)",Redirect Users After Logout,,
+TC30,"Tenant environment tag assigned
+Assign an environment tag for each tenant ",Set the Environment,,
+TC35,"Tenant production checks run
+Run automated tests on your production tenant configuration and address any issues raised (also applicable for non-production tenants)",How to Run Production Checks,,
+TC40,"Real-time webtask logging
+Enable real-time webtask logging for extensibility debugging (not applicable if you are not using Auth0 extensibility features such as Rules, Hooks or custom database)",Real-time Webtask Logs,,
+User Authentication,,,,
+TC200,"Allowed callback URLs defined
+Specify redirect URLs and not defined as localhost.",Redirect Users After Login,,
+Quality Assurance,,,,
+TC700,"Performance test
+Test performance to uncover issues with implementation",Performance Testing,,
+TC705,"Performance test tooling
+Review third-party tools for performance related testing",Third-Party Testing Tools,,
+TC710,"Load test scheduling
+Schedule performance load testing in accordance with Auth0 load testing policy (not applicable if you do not need to load test)",How to Request Load Testing,,
+TC715,"Load test
+Perform performance load testing in accordance with Auth0 load testing policy and requirements (not applicable if you do not need to load test)",Load Testing Policy,,
+,,Load Testing Requirements,,
+TC720,"Mock test Authentication API
+Mock test as a supplement to mitigate restrictions associated with Auth0 load testing (recommended but not mandatory if you do not need to load test)",Testing Your Auth0 Implementation,,
+TC725,"Mock test Management API
+Mock test for Management API calls as a supplement to mitigate restrictions associated with Auth0 load testing (not applicable if no independent calls are made to the Auth0 Management API)",Testing Your Auth0 Implementation,,
+,Deploy,,,
+#,Item,Guidance,Completed (or NA),Notes
+Architecture,,,,
+DEC10,"Tenant administrators defined
+Provision tenant administrators",Manage Tenant Administrators in the Dashboard,,
+DEC15,"Tenant administration delegation defined
+Provision delegated tenant administrator (not applicable if you’re not using tenant Delegated Administration)",Manage Tenant Administrators in the Dashboard,,
+DEC17,"MFA for tenant administrators enabled
+Enroll tenant administrators for MFA (Multi-factor Authentication) ",Enrolling in Multi-factor Authentication,,
+DEC20,"Support URL configured
+Configure the URL for your company/organization support page and as a best practice for your production tenant deployment",Tenant Settings in the Dashboard,,
+DEC25,"Support email configured
+Configure the email address used to contact your company/organization support team and as a best practice for your production tenant deployment",Tenant Settings in the Dashboard,,
+DEC30,"Session lifetime limits for SSO configured
+Configure session lifetime limits for SSO",Configure Session Lifetime Limits for Single Sign On,,
+DEC40,"Tenant wide allowed logout URLs defined
+Specify logout redirect URLs and not defined as localhost (not mandatory but recommended)",Redirect Users After Logout,,
+DEC50,"Tenant environment tag assigned
+Assign environment tag for each tenant",Set the Environment,,
+DEC55,"Tenant production checks run
+Run automated tests on production tenant configuration and address any issues raised (also applicable for non-production tenants)",How to Run the Production Checks,,
+DEC57,"Tenant production checks best practice aligned
+Align production tenant checks with best practices (also applicable for non-production tenants)",Production Checks: Best Practices,,
+DEC60,"Anomaly detection enabled
+Protect against brute force attacks and use of breached passwords",Set Anomaly Detection Preferences,,
+DEC70,"Install Auth0 Extensions
+Install desired extensions into each tenant",Extensions,,
+User Provisioning,,,,
+DEC100,"Review user signup policy for database connections
+Disable user signup where not required (not applicable if your are not using Auth0 database connections)",Disable user signup if it's not appropriate for each database connection,,
+DEC110,"Set password policy for database connections
+Setup recommended password policy for database connections (not applicable if you are not using Auth0 database connections)",Set password policy for database connections,,
+User Authentication,,,,
+DEC200,"Allow callback URLs defined
+Specify redirect URLs not defined as localhost.",Redirect Users After Login,,
+DEC210,"Application grant types aligned
+Disable grant types not required or recommended in your application (not applicable if you are not using OIDC or OAuth2 workflows)",Available Grant Types,,
+DEC220,"Social connection developer keys replaced
+Complete registration for each social identity provider to mitigate limitations of out-of-box Auth0 Developer Keys (not applicable if you are not using social connections)",Test Social Connections with Auth0 Developer Keys,,
+DEC225,"Social connection identity data reviewed
+Review data being requested from each social connection (not applicable if you are not using social connections)",Review requested data,,
+DEC230,"RSA-SHA256 used as signature algorithm
+Configure SAML connections to sign requests and use RSA-SHA256 (not applicable if you are not using SAML)",Use RSA-SHA256 for SAML connections,,
+User Profile Management,,,,
+DEC400,"Set password policy for database connections
+Setup recommened password policy for database connections (not applicable if you are not using Auth0 database connections)",Set password policy for database connections,,
+User Logout,,,,
+DEC500,"Allowed logout URLs defined
+Specify logout redirect URLs and not defined as localhost (not mandatory but recommended)",Redirect users after logout,,
+Deployment Automation,,,,
+DEC800,"Integration test for Rules
+For custom Rule extensibility, execute integration test(s) prior to automated deployment (also applicable if you are not using CI/CD pipeline, though not required if you are not using Rule extensibility)",How to unit test rules as part of CI/CD pipeline,,
+DEC810,"Integration test for Hooks
+For custom Hook extensibility, execute integration test(s) prior to automated deployment (also applicable if you are not using a CI/CD pipeline, though not required if you are not using Hook extensibility)",Hooks,,
+DEC820,"Integration test for custom database scripts
+Execute integration test(s) when authenticating users using your own database or automatically migrating users prior to automated deployment (also applicable if you are not using a CI/CD pipeline, through not required if you have not implemented custom database scripts)",Custom Database Error Handling and Troubleshooting,,
+,Monitor,,,
+#,Item,Guidance,Completed (or NA),Notes
+Operations,,,,
+MC900,"Review Dashboard notifications
+Review Auth0 important announcements sent to you tenant Dashboard and, depending on severity, to email registered for Auth0 Dashboard Administrators",Tenant Settings in the Auth0 Dashboard,,
+MC910,"Review security bulletins
+Review notifications regarding security-related tests conducted by Auth0 and any security-related changes or actions required ",Auth0 Security Bulletins,,
+MC920,"Subscribe to Auth0 Service Status
+Subscribe via the Auth0 status dashboard to get Auth0 service status information",Auth0 Status,,
+MC930,"Monitor Auth0 Service Uptime
+Monitor Auth0 via the uptime dashboard to get Auth0 service status information",Auth0 Uptime,,
+MC940,"View log data
+View log data by checkpoint and search criteria to gain insight into operational events",What can I use logs for?,,
+MC950,"Export log data for aggregation
+Export to third-party logging services for log preservation and aggregation",Export Auth0 logs to an external service,,
+MC960,"Monitor third-party service status
+Monitor external service status to see identity provider status (not applicable if you are not using social connections)",Check External Services Status,,
