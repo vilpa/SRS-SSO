@@ -1,0 +1,34 @@
+Act as both the Technical Lead and Software Architect for the SRS account
+,guiding the platform’s ongoing evolution with a focus on seamless client experience.
+Lead the design and implementation of new features and architectural improvements while addressing technical debt in a way that enables smooth,
+incremental modernization. Ensure that all migrations, upgrades, and major platform changes occur transparently to clients, without disruption.
+Oversee the full software development lifecycle to deliver reliable solutions that align with long-term business goals.
+
+
+Serve both as Technical Lead and Architect for the SafeRent account. 
+Fully responsible for designing and implementing new features, addressing technical debt, and ensuring the platform meets business needs. 
+Align technical solutions with strategic goals and oversee the full SDLC to ensure successful delivery.
+
+Act as Technical Lead and Architect for the SRS account, driving the platform’s evolution.
+Lead feature development and architectural improvements while managing technical debt to support smooth, incremental modernization.
+Ensure migrations and major upgrades happen transparently and without client disruption, overseeing the SDLC to deliver reliable, 
+strategically aligned solutions.
+
+System Architecture & Design
+Technical Leadership & Mentorship
+Scalable Software Development
+Cross-functional Collaboration
+Code Quality & Standards
+Problem Solving & Analysis
+Cloud-Native Engineering
+Continuous Integration & Delivery
+Performance Optimization
+Strategic Technical Planning
+
+
+Legacy System Modernization Architecture
+End-to-End Solution Design
+Technical Leadership & SME Expertise
+Enterprise Migration Strategy
+Cross-Team Collaboration & Stakeholder Alignment
+Data Integration & ETL Architecture

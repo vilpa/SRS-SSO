@@ -1,4 +1,4 @@
-workspace "SRS before SSO" "C4 Model for Current Solution Architecture" {
+workspace "NewAccount integration" "C4 Model for Client onboarding Integration" {
 
 /*
 container <name> [description] [technology] [tags] {
@@ -6,206 +6,157 @@ container <name> [description] [technology] [tags] {
 }
 */
     model {
+        /* Web users */
         client = person "Client" "Member user accessing and managing applications"
-        sll = person "Small Landlord" "Independent property owners using MyRental for tenant screening"
-        customer = person "Applicant" "Applicant or tenant undergoing screening"
-        support = person "Support" "SafeRent Solutions support team assisting users"
         accmanager = person "Account Manager" "Client relationship and account representative"
-        mlsagent = person "MLS agent" "Licensed real estate listing representative"
-        pmsuser = person "PMS user" "Manages property operations and tenant activities"
-        iuser = person "internet user" "internet user with public, unauthenticated application access"
+        support = person "Support" "SafeRent Solutions support team assisting clients"
 
-        yardi = softwareSystem "Yardi" "Property management and accounting software solution" "External PMS system"
-        mri = softwareSystem "MRI" "Enterprise real estate management and analytics platform" "External PMS system"
-        appfolio = softwareSystem "AppFolio" "Cloud-based property management and leasing software" "External PMS system"
-        mls = softwareSystem "MLS" "Platform for sharing real estate listings" "External PMS system"
-        dyn = softwareSystem "Dynamics" "SafeRent CRM"
-        eid = softwareSystem "Microsoft Entra ID" "SafeRentSolutions tenant" "Azure" 
-
-        pmsuser -> yardi "verifies identity, Forms"
-        pmsuser -> appfolio "verifies identity, Forms"
-        pmsuser -> mri "verifies identity, Okta"
-        support -> dyn "verifies identity, SRS Azure"
-        accmanager -> dyn "verifies identity, SRS Azure"
-
+        /* external software system */
         srssystem = softwareSystem "SafeRent Platform" {
             description "Centralized system for rental screening and identity verification"
+            tags "Existing System"
+        }
+        
+        dyn = softwareSystem "Dynamics" "SafeRent CRM supporting onboarding records and workflows" "Existing System"
+        slack = softwareSystem "Slack" "Real-time communication and notification channel" "Existing System"
+        auth0 = softwareSystem "EntraID" "Centralized authentication service for secure user access" "Existing System"
+        aam = softwareSystem "AAM" "Internal app storing client account settings and configuration" "Existing System"
 
-            group "SRS" {
-                srsweb = container "SRS Web" {
-                    technology ".NetFramework 4.8, ASP.NET Forms"
-                    description "Forms authentication, Role-based access on top of .Net Access DB"
-                    tags "SRSWeb"
+        nasystem = softwareSystem "NewAccount Platform" {
+            description "Onboarding platform automating client setup and workflows"
 
-                }
-                srsb2b = container "SRS B2B" {
-                    technology ".NetFramework 4.8, ASP.NET, Web API"
-                    description "API to support MITS, MITS 2.5, RETS, IDX, ILS"
-                    tags "SRSWeb"                    
-                }
-                srsdyn = container "Dynamics API" {
-                    technology ".NET, Web API"
-                    description "Internal API to export transactions, clients, billing info"
-                    tags "Dynamics"        
-                }
-
-                mpf = container "SRS Monitoring SPA" {
+            group "SPA" {
+                newaccount_spa = container "NewAccount SPA" {
                     technology "Angular 17"
-                    description "Web UI"
-                    tags "Web Browser, MP"                    
+                    description "Web application"
+                    tags "Web Browser"
                 }
-                mpb = container "SRS Monitoring API" {
+            }
+
+            group "API" {                
+                newaccount_api = container "NewAccount API" {
                     technology ".NET, Web API"
                     description "API to provide transactions details"
-                    tags "Core, Utility, Shared"                    
+                    tags "Core"                    
+
+                    // === Controllers (API entrypoints) ===
+                    apimodule = component "AccountOnboardingController" "Handles end-to-end client onboarding flows" "ASP.NET Web API Controller" "Controller,Module:Onboarding"
+                    
+                    // === Application / Domain Services ===
+                    accountOnboardingService  = component "AccountOnboardingService"  "Orchestrates onboarding: Dynamics + AAM + SRS + Slack" "C# Service" "Service,Module:Onboarding"
+                    accountSyncService        = component "AccountSyncService"        "Coordinates push/pull/sync with Dynamics 365" "C# Service" "Service,Module:AccountSync"
+                    dynamicsAccountService    = component "DynamicsAccountService"    "Business logic and mapping for Dynamics accounts" "C# Service" "Service,Module:AccountSync"
+                    accountSettingsService    = component "AccountSettingsService"    "Business logic for account settings via AAM/local DB" "C# Service" "Service,Module:AccountSettings"
+                    srsAccountService         = component "SrsAccountService"         "Business logic for updating and validating SRS data" "C# Service" "Service,Module:SrsIntegration"
+                    notificationService       = component "NotificationService"       "Builds and sends Slack notifications for key events" "C# Service" "Service,Module:Notifications"
+                    accountEventService       = component "AccountEventService"       "Publishes internal/domain account events" "C# Service" "Service,Module:Platform"
+
+                    authenticationComponent = component "AuthenticationComponent" "Validates JWT tokens and authorization" "Middleware" "CrossCutting,Module:Platform"
+                    observabilityComponent  = component "ObservabilityComponent"  "Central logging/metrics/tracing for integrations" "Library" "CrossCutting,Module:Platform"
                 }
-                regaccessdb = container "RegAccess users DB" {
-                    technology "SQLServer"
-                    description "Credentials, Permissions, Profiles, ASP.NET Sessions"
+
+                opodb = container "Opportunity Schema" {
+                    technology "Postgre SQL"
+                    description "Documents JSON, Rules, Logs"
                     tags "Database"
                 }
-            }
 
-            mpf -> mpb "sends auth token"
-
-            group "MyRental" {
-                mrkt = container "Markening Portal" {
-                    technology ".NetFramework 4.8, ASP.NET, MVC"
-                    description "MyRental entry point"
-                    tags "Core, Utility, Shared"                    
-                }
-                appsmyrental = container "MyRental" {
-                    technology ".NetFramework 4.8, ASP.NET, MVC"
-                    description "MyRental screening portal"
-                    tags "Core, Utility, Shared"      
-                }
-            }
-
-            group "BackOffice" {
-                
-                boportalui = container "Backoffice portal UI" {
-                    technology "Angular 17"
-                    description "Backoffice entry point"
-                    tags "Web Browser"                    
-                }
-                boportal = container "Backoffice portal" {
-                    technology ".NET 8"
-                    description "Backoffice entry point"
-                    tags "Core, Utility, Shared"                    
-                }
-                pportalui = container "Permissions Manager UI" {
-                    technology "Angular 17"
-                    description "Admin portal for centralized user and access management to backoffice apps"
-                    tags "Web Browser"                    
-                }
-                pportal = container "Permissions Manager" {
-                    technology ".NET 8"
-                    description "Admin portal for centralized user and access management to backoffice apps"
-                    tags "Core, Utility, Shared"                    
-                }
-                dmui = container "CBP Data UI" {
-                    technology "Angular 17"
-                    description "CBP Data management portal"
-                    tags "Web Browser"                    
-                }
-                dm = container "CBP Data" {
-                    technology ".NET 8"
-                    description "CBP Data management portal"
-                    tags "Core, Utility, Shared"                    
-                }
-                crimsafeuiui = container "CBP processor UI" {
-                    technology "Angular 17"
-                    description "Criminal data processor"
-                    tags "Web Browser"                    
-                }
-                crimsafeui = container "CBP processor" {
-                    technology ".NET 8"
-                    description "Criminal data processor"
-                    tags "Core, Utility, Shared"                    
-                }
-                tsui = container "Vendor Routing UI" {
-                    technology "Angular 17"
-                    description "Set data vendors parameters, priority, properties mapping"
-                    tags "Web Browser"                    
-                }
-                ts = container "Vendor Routing" {
-                    technology ".NET 8"
-                    description "Set data vendors parameters, priority, properties mapping"
-                    tags "Core, Utility, Shared"                    
-                }
-                mtui = container "Transactions Monitoring Portal UI" {
-                    technology "Angular 17"
-                    description "Credit/Crim bureaus row data tracer"
-                    tags "Web Browser"                    
-                }
-                mt = container "Transactions Monitoring Portal" {
-                    technology ".NET 8"
-                    description "Credit/Crim bureaus row data tracer"
-                    tags "Core, Utility, Shared"                    
-                }
-                osdb = container "BO users DB" {
-                    technology "PostgreSQL"
-                    description "Credentials, Permissions, Profiles"
+                regisdb = container "Regis Schema" {
+                    technology "Postgre SQL"
+                    description "Account, Billing settings"
                     tags "Database"
                 }
+
+                rabbitmq = container "Queue" {
+                    technology "MassTransit [RabbitMQ]"
+                    description "Message broker enabling reliable asynchronous system communication"
+                    tags "Queue"
+                }
             }
 
-            srsweb -> regaccessdb "saves credentials, permissions"
-            appsmyrental -> regaccessdb "saves credentials, permissions"
-            regaccessdb -> srsweb "gets credentials, permissions"
-            regaccessdb -> appsmyrental "gets credentials, permissions"
-            regaccessdb -> mpb "gets credentials, permissions"
-            regaccessdb -> srsb2b "gets credentials, permissions"
-            client -> srsweb "verifies identity, Forms, validates access, SRS"
-            customer -> appsmyrental "verifies identity, Forms, validates access, MR"
-            sll -> appsmyrental "verifies identity, Forms, validates access, MR"
-            support -> srsweb "verifies identity, Forms, validates access, SRS"
-            support -> mpf "verifies identity, Forms, validates access, MP"
-            accmanager -> srsweb "verifies identity, Forms, validates access, SRS"
-            iuser -> mrkt "public access"
-            pmsuser -> srsweb "verifies identity, Forms, validates access, SRS"
+            client -> newaccount_spa "provides initial info, screening parameters"
+            accmanager -> newaccount_spa "verifies clients data, approves requests"
+            support -> newaccount_spa "verifies clients data, resolves data issues"
 
-            yardi -> srsb2b "sends credentials, MITS XML"
-            mri -> srsb2b "sends credentials, MITS XML"
-            appfolio -> srsb2b "sends credentials, MITS XML"
-            mls -> appsmyrental "verifies identity, SAML, validates access, MR"
-            dyn -> srsdyn "verifies App identity, Azure M2M"
+            support -> dyn "tracks clients activities"
+            accmanager -> dyn "mnages clients info"
 
-            boportalui -> pportalui "redirects with permissions"
-            boportalui -> dmui "redirects with permissions"
-            boportalui -> crimsafeuiui "redirects with permissions"
-            boportalui -> tsui "redirects with permissions"
-            boportalui -> mtui "redirects with permissions"
-            boportal -> eid "validates token"
+            client -> srssystem "manages subaccounts, parameters"
+            accmanager -> auth0 "authentication"
+            support -> auth0 "authentication"
 
-            pportalui -> pportal "gets local auth token"
-            dmui -> dm "gets local auth token"
-            crimsafeuiui -> crimsafeui "gets local auth token"
-            tsui -> ts "gets local auth token"
-            mtui -> mt "gets local auth token"
+            auth0 -> newaccount_spa "generates tokens"
+
+            newaccount_spa -> apimodule "calls onboarding APIs"
+
+            dyn -> apimodule "pushes updates"
+            accountOnboardingService -> opodb "persists clients data"
+            accountSettingsService -> regisdb "persists clients data"
+
+            accountEventService -> rabbitmq "notifies consumers, multicast"
+
+            dynamicsAccountService -> dyn "syncs CRM data"
+            notificationService -> slack "posts Slack messages"
+            newaccount_api -> aam "syncs account settings"
+            newaccount_api -> srssystem "syncs SRS accounts"
+
+            apimodule -> accountOnboardingService "orchestrates onboarding"
+            apimodule -> accountSyncService "triggers sync operations"
+            apimodule -> dynamicsAccountService "manages CRM mapping"
+            apimodule -> accountSettingsService "manages account settings"
+            apimodule -> srsAccountService "manages SRS integration"
+            apimodule -> notificationService "requests notifications"
+            apimodule -> accountEventService "publishes domain events"
+            apimodule -> authenticationComponent "enforces authentication"
+
+            accountOnboardingService -> rabbitmq "publishes onboarding events"
+            accountSyncService -> rabbitmq "publishes sync events"
+            dynamicsAccountService -> rabbitmq "publishes CRM events"
+            accountSettingsService -> rabbitmq "publishes settings events"
+            srsAccountService -> rabbitmq "publishes SRS events"
             
-            osdb -> boportal "gets credentials, permissions"
-            pportal -> osdb "persists credentials, permissions"
-
-            support -> boportalui "sends id token"
-            boportalui -> boportal "verifies identity, validates access"
-            accmanager -> boportalui "sends id token"
-
-            support -> eid "verifies identity, gets token"
-            accmanager -> eid "verifies identity, gets token"
-
-            mlsagent -> mls "verifies identity, SAML"
-            mlsagent -> mrkt "public access"
+            authenticationComponent -> srssystem "validates SRS access"
+            authenticationComponent -> auth0 "validates tokens"
         }
     }
 
+
     views {
-        systemcontext srssystem "SystemContext" {
+        systemcontext nasystem "SystemContext" {
             include *
         }
         
-        container srssystem "ContainerDiagram" {
+        container nasystem "ContainerDiagram" {
             include *
+        }
+
+        component newaccount_api "NewAccount_API_Components_by_Module" {
+            include *
+            /*
+            group "Onboarding" {
+                include element.tag=="Module:Onboarding"
+            }
+            group "Account Sync" {
+                include element.tag=="Module:AccountSync"
+            }
+            group "Account Settings" {
+                include element.tag=="Module:AccountSettings"
+            }
+            group "SRS Integration" {
+                include element.tag=="Module:SrsIntegration"
+            }
+            group "Notifications" {
+                include element.tag=="Module:Notifications"
+            }
+            group "Integration Infrastructure" {
+                include element.tag=="Module:IntegrationInfrastructure"
+            }
+            group "Platform / Shared Kernel" {
+                include element.tag=="Module:Platform"
+            }
+
+            autoLayout lr
+            */
         }
         
         styles {

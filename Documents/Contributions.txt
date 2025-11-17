@@ -1,0 +1,53 @@
+Led discovery for migration of a legacy IBM AS400. 
+Designed and proposed scalable microservices platform by reverse engineering a legacy system 
+and transforming it into a Java-based microservices architecture, improving maintainability, scalability, and system reliability.
+
+Initiated new revenue stream for EPAM by identifying and analyzing technical debt in the client’s backlog 
+and persuading stakeholders to invest in its resolution, adding long-term value to the platform.
+
+Implemented full CI/CD pipeline in accordance with best EngX practices resulting in faster deployments, and higher code quality.
+
+
+Presale. Contributed and helped to win the opportunity to migrate one of the main application component (Router) 
+from an outdated RPG-based system to a modern architecture using Spring State Machine. 
+This solved complex service dependencies and impressed the client, leading to additional business for EPAM. 
+
+Executed a full datacenter migration, ensuring a seamless transition with minimal downtime and improving system performance and scalability.
+
+Transformed complex requirements into actionable solutions by visualizing them,
+leading to the creation of a detailed and effective WBS that enhanced project clarity and execution. 
+
+Integrated HashiCorp Secrets Manager to secure sensitive data across microservices, improving overall system security and compliance.
+
+
+
+Start working with the project from very beginig. I Took part as an NET team Lead in discovery phase during transition to EPAM team.
+During 3 month of discovery phase I collaborated with current platfomr vendors, RPS architects, and business team to build platform documentation. 
+As a result multiple diagrams created revealed the current state of RPS solutions at that time. (Please make accent on design analasys)
+
+I was a software architect on a project of migration AS400 main frame intrfaces, screens to modern Angular SPA set of Applications under common umbrella.
+The projcet gradiually migrated to new environment simultaneously supported multiple DB system. The process of migration went smoothly.
+The System was designed in a way to support future modernixation. It is still in expluatation end under evoluation that emphasays its reliability.
+(emphasays smooth migration)
+
+The second experience was migration data flows mechanism and tools from AS400 jobs and custom tools to SSIS packages and Pentaho jobs.
+I was Team lead of migration team consists of 5 developers who design data flows, plan migration, created detailed WBS. 
+(emphasays broad knowledge)
+
+I took part in preaparation to full transition from third party vendors to EPAM managed-services-model project. 
+Discovery phase, system architecture diagrams, all teams, including vendors, and their responsibilities were documented. 
+The second phase was owner change and migration SRS solutions from corporate corelogic infrastructure environment to dedicted clients data center.
+Having documents and architecture diagrams the migration was comleted in 3 months. My role was SME of NET projects and DB solutions.
+(emphasays broad knowledge)
+
+Billing migration. Role SME and Software Architect. It was Migration project from Oracle Financials to Sage Intacct Cloud Accounting and Financial Management System.
+My responsibilities were: Data Extraction & Transaction Capture, Transformation & Data Normalization to match Intacct’s data model.
+Interface & Integration Adaptation, Parallel Run & Validation, Cutover Planning & Execution, Post-Migration Support & Optimization
+(emphasays architectural experience in Finance)
+
+
+
+
+
+
+
