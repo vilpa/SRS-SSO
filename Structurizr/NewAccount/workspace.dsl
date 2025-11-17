@@ -118,6 +118,54 @@ container <name> [description] [technology] [tags] {
             authenticationComponent -> srssystem "validates SRS access"
             authenticationComponent -> auth0 "validates tokens"
         }
+
+        prod = deploymentEnvironment "Production" {  
+
+            serviceInstance1 = deploymentGroup "Service instance 1" 
+            serviceInstance2 = deploymentGroup "Service instance 2"
+
+
+
+            group "project: s100-prj-new-acc-0285" {
+                deploymentNode "Instance Group" {
+                    technology "srs-s000-s100-gce-ig-nacc-us-west1-a"
+                    
+                    s100nacc02 = deploymentNode "S100NACC02" {
+                        technology "Windows Server 2022"
+                        containerInstance newaccount_api serviceInstance1
+                            infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
+                    }
+
+                    s100nacc01 = deploymentNode "S100NACC01" {
+                        technology "Windows Server 2022"
+                        containerInstance newaccount_api serviceInstance2
+                            infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
+                    }
+                }
+           }
+
+           group "srs-s000-prj-s-net-7248" {
+                ig = deploymentNode "..." {
+                    tag "NetArea"
+                    lb = infrastructureNode "Load Balancer" "Layer 7" "Google Cloud Platform - Cloud Load Balancing" "Google Cloud Platform - Cloud Load Balancing" {
+                        -> s100nacc01
+                        -> s100nacc02
+                    }
+
+                    psc = infrastructureNode "Private Service Connect" "X" "Private Service Connect" "Google Cloud Platform - Dedicated Interconnect" {
+                        -> lb
+                    }            
+                }
+            }
+
+            apigeetp = deploymentNode "DNS resolution" {
+                    technology "Apigee Tenant Project"    
+                    tag "Google Cloud Platform - Cloud DNS" 
+                    apigeei = infrastructureNode "Apigee Instance" "Tenant" "Google Cloud Platform - Apigee API Platform" "Google Cloud Platform - Apigee API Platform" {
+                        -> psc
+                    }       
+            }
+        }
     }
 
 
@@ -132,31 +180,10 @@ container <name> [description] [technology] [tags] {
 
         component newaccount_api "NewAccount_API_Components_by_Module" {
             include *
-            /*
-            group "Onboarding" {
-                include element.tag=="Module:Onboarding"
-            }
-            group "Account Sync" {
-                include element.tag=="Module:AccountSync"
-            }
-            group "Account Settings" {
-                include element.tag=="Module:AccountSettings"
-            }
-            group "SRS Integration" {
-                include element.tag=="Module:SrsIntegration"
-            }
-            group "Notifications" {
-                include element.tag=="Module:Notifications"
-            }
-            group "Integration Infrastructure" {
-                include element.tag=="Module:IntegrationInfrastructure"
-            }
-            group "Platform / Shared Kernel" {
-                include element.tag=="Module:Platform"
-            }
+        }
 
-            autoLayout lr
-            */
+        deployment * prod {
+            include *
         }
         
         styles {
@@ -208,8 +235,12 @@ container <name> [description] [technology] [tags] {
             element "Queue" {
                 shape Pipe
             }
+            element "NetArea" {
+                description false
+                metadata false
+            }
         }
     
-        theme https://static.structurizr.com/themes/microsoft-azure-2021.01.26/theme.json
+        theme https://static.structurizr.com/themes/google-cloud-platform-v1.5/theme.json
     }
 }
