@@ -26,12 +26,10 @@ container <name> [description] [technology] [tags] {
         nasystem = softwareSystem "NewAccount Platform" {
             description "Onboarding platform automating client setup and workflows"
 
-            group "SPA" {
-                newaccount_spa = container "NewAccount SPA" {
-                    technology "Angular 17"
-                    description "Web application"
-                    tags "Web Browser"
-                }
+            newaccount_spa = container "NewAccount SPA" {
+                technology "Angular 17"
+                description "Web application"
+                tags "Web Browser"
             }
 
             group "API" {                
@@ -55,27 +53,25 @@ container <name> [description] [technology] [tags] {
                     authenticationComponent = component "AuthenticationComponent" "Validates JWT tokens and authorization" "NET Libraries" "CrossCutting,Module:Platform"
                     observabilityComponent  = component "ObservabilityComponent"  "Central logging/metrics/tracing for integrations" "NET Libraries" "CrossCutting,Module:Platform"
                 }
-
-                rabbitmq = container "EventBus" {
-                    technology "MassTransit [RabbitMQ]"
-                    description "Message broker enabling reliable asynchronous system communication"
-                    tags "Queue"
-                }
             }
 
-            group "PostgreSQLDB" {
-                    
-                    opodb = container "Opportunity Schema" {
-                        technology "Postgre SQL"
-                        description "Documents JSON, Rules, Logs"
-                        tags "Database"
-                    }
-
-                    regisdb = container "Regis Schema" {
-                        technology "Postgre SQL"
-                        description "Account, Billing settings"
-                        tags "Database"
-                    }
+            rabbitmq = container "EventBus" {
+                technology "MassTransit [RabbitMQ]"
+                description "Message broker enabling reliable asynchronous system communication"
+                tags "Queue"
+            }
+            
+            group "PostgreSQLDB" {                    
+                opodb = container "Opportunity Schema" {
+                    technology "Postgre SQL"
+                    description "Documents JSON, Rules, Logs"
+                    tags "Database"
+                }
+                regisdb = container "Regis Schema" {
+                    technology "Postgre SQL"
+                    description "Account, Billing settings"
+                    tags "Database"
+                }
             }
 
             client -> newaccount_spa "provides initial info, screening parameters"
@@ -126,13 +122,52 @@ container <name> [description] [technology] [tags] {
         prod = deploymentEnvironment "Production" {  
             serviceInstance1 = deploymentGroup "Service instance 1" 
             serviceInstance2 = deploymentGroup "Service instance 2"
-            
+
+            pginst1 = deploymentGroup "PG instance 1" 
+            pginst2 = deploymentGroup "PG instance 2"
+
+            rbinst1 = deploymentGroup "RBMQ instance 1" 
+            rbinst2 = deploymentGroup "RBMQ instance 2"
+
+
             gcpvpc = deploymentNode "Googl Cloud Platform VPC" {
                 technology ""
                 tag "NetArea, Google Cloud Platform - Virtual Private Cloud"
+
+                group "project: s100-prj-plt-rbmq-3194" {
+                    dpngrbmq = deploymentNode "RabbitMQ Group" {
+                        
+                        dpnrbmq1 = deploymentNode "vm-rbmq-01-us-west1" {
+                            technology "\n"
+                            containerInstance rabbitmq rbinst1                            
+                        }
+
+                        dpnrbmq2 = deploymentNode "vm-rbmq-02-us-west1" {
+                            technology "\n"
+                            containerInstance rabbitmq rbinst2                            
+                        }
+                    }
+                }                
+
+                group "project: s100-prj-db-postgres-9946" {
+                    dpng = deploymentNode "Postgre SQL Group" {
+                        
+                        dpn1 = deploymentNode "srs-s000-s100-gce-vm-pgrs-11-us-west1" {
+                            technology "PostgreSQL 16.8"
+                            containerInstance opodb pginst2                            
+                            containerInstance regisdb pginst2                            
+                        }
+
+                        dpn2 = deploymentNode "srs-s000-s100-gce-vm-pgrs-12-us-west1" {
+                            technology "PostgreSQL 16.8"
+                            containerInstance opodb pginst2                            
+                            containerInstance regisdb pginst2
+                        }
+                    }
+                }                
                 
                 group "project: s100-prj-new-acc-0285" {
-                    deploymentNode "Instance Group" {
+                    igdnapi = deploymentNode "Instance Group" {
                         technology "srs-s000-s100-gce-ig-nacc-us-west1-a"
                         
                         s100nacc02 = deploymentNode "S100NACC02" {
@@ -146,8 +181,11 @@ container <name> [description] [technology] [tags] {
                             containerInstance newaccount_api serviceInstance2
                                 infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
                         }
+                        -> dpng
+                        -> dpngrbmq
                     }
                 }
+
                 group "srs-s000-prj-s-net-7248" {
                     ig = deploymentNode "..." {
                         tag "NetArea"
@@ -196,10 +234,13 @@ container <name> [description] [technology] [tags] {
         
         container nasystem "ContainerDiagram" {
             include *
+            exclude client accmanager support dyn slack auth0 aam srssystem
+
         }
 
         component newaccount_api "NewAccount_API_Components_by_Module" {
             include *
+            exclude auth0
         }
 
         deployment * prod {

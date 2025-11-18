@@ -203,9 +203,10 @@ container <name> [description] [technology] [tags] {
         systemcontext srssystem "SystemContext" {
             include *
         }
-        
+       
         container srssystem "ContainerDiagram" {
             include *
+            exclude client sll customer support accmanager mlsagent pmsuser iuser yardi mri appfolio mls dyn eid
         }
         
         styles {
