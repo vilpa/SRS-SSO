@@ -6,6 +6,7 @@ container <name> [description] [technology] [tags] {
 }
 */
     model {
+
         /* Web users */
         client = person "Client" "Member user accessing and managing applications"
         accmanager = person "Account Manager" "Client relationship and account representative"
@@ -40,38 +41,41 @@ container <name> [description] [technology] [tags] {
                     tags "Core"                    
 
                     // === Controllers (API entrypoints) ===
-                    apimodule = component "AccountOnboardingController" "Handles end-to-end client onboarding flows" "ASP.NET Web API Controller" "Controller,Module:Onboarding"
+                    apimodule = component "AccountOnboardingController" "Handles end-to-end client onboarding flows" ".NET API" "Controller,Module:Onboarding"
                     
                     // === Application / Domain Services ===
-                    accountOnboardingService  = component "AccountOnboardingService"  "Orchestrates onboarding: Dynamics + AAM + SRS + Slack" "C# Service" "Service,Module:Onboarding"
-                    accountSyncService        = component "AccountSyncService"        "Coordinates push/pull/sync with Dynamics 365" "C# Service" "Service,Module:AccountSync"
-                    dynamicsAccountService    = component "DynamicsAccountService"    "Business logic and mapping for Dynamics accounts" "C# Service" "Service,Module:AccountSync"
-                    accountSettingsService    = component "AccountSettingsService"    "Business logic for account settings via AAM/local DB" "C# Service" "Service,Module:AccountSettings"
-                    srsAccountService         = component "SrsAccountService"         "Business logic for updating and validating SRS data" "C# Service" "Service,Module:SrsIntegration"
-                    notificationService       = component "NotificationService"       "Builds and sends Slack notifications for key events" "C# Service" "Service,Module:Notifications"
-                    accountEventService       = component "AccountEventService"       "Publishes internal/domain account events" "C# Service" "Service,Module:Platform"
+                    accountOnboardingService  = component "AccountOnboarding Module"  "Orchestrates onboarding: Dynamics + AAM + SRS + Slack" "NET Libraries" "Service,Module:Onboarding"
+                    accountSyncService        = component "AccountSync Module"        "Coordinates push/pull/sync with Dynamics 365" "NET Libraries" "Service,Module:AccountSync"
+                    dynamicsAccountService    = component "DynamicsAccount Module"    "Business logic and mapping for Dynamics accounts" "NET Libraries" "Service,Module:AccountSync"
+                    accountSettingsService    = component "AccountSettings Module"    "Business logic for account settings via AAM/local DB" "NET Libraries" "Service,Module:AccountSettings"
+                    srsAccountService         = component "SrsAccount Module"         "Business logic for updating and validating SRS data" "NET Libraries" "Service,Module:SrsIntegration"
+                    notificationService       = component "Notification Module"       "Builds and sends Slack notifications for key events" "NET Libraries" "Service,Module:Notifications"
+                    accountEventService       = component "AccountEvent Module"       "Publishes internal/domain account events" "NET Libraries" "Service,Module:Platform"
 
-                    authenticationComponent = component "AuthenticationComponent" "Validates JWT tokens and authorization" "Middleware" "CrossCutting,Module:Platform"
-                    observabilityComponent  = component "ObservabilityComponent"  "Central logging/metrics/tracing for integrations" "Library" "CrossCutting,Module:Platform"
+                    authenticationComponent = component "AuthenticationComponent" "Validates JWT tokens and authorization" "NET Libraries" "CrossCutting,Module:Platform"
+                    observabilityComponent  = component "ObservabilityComponent"  "Central logging/metrics/tracing for integrations" "NET Libraries" "CrossCutting,Module:Platform"
                 }
 
-                opodb = container "Opportunity Schema" {
-                    technology "Postgre SQL"
-                    description "Documents JSON, Rules, Logs"
-                    tags "Database"
-                }
-
-                regisdb = container "Regis Schema" {
-                    technology "Postgre SQL"
-                    description "Account, Billing settings"
-                    tags "Database"
-                }
-
-                rabbitmq = container "Queue" {
+                rabbitmq = container "EventBus" {
                     technology "MassTransit [RabbitMQ]"
                     description "Message broker enabling reliable asynchronous system communication"
                     tags "Queue"
                 }
+            }
+
+            group "PostgreSQLDB" {
+                    
+                    opodb = container "Opportunity Schema" {
+                        technology "Postgre SQL"
+                        description "Documents JSON, Rules, Logs"
+                        tags "Database"
+                    }
+
+                    regisdb = container "Regis Schema" {
+                        technology "Postgre SQL"
+                        description "Account, Billing settings"
+                        tags "Database"
+                    }
             }
 
             client -> newaccount_spa "provides initial info, screening parameters"
@@ -120,41 +124,42 @@ container <name> [description] [technology] [tags] {
         }
 
         prod = deploymentEnvironment "Production" {  
-
             serviceInstance1 = deploymentGroup "Service instance 1" 
             serviceInstance2 = deploymentGroup "Service instance 2"
+            
+            gcpvpc = deploymentNode "Googl Cloud Platform VPC" {
+                technology ""
+                tag "NetArea, Google Cloud Platform - Virtual Private Cloud"
+                
+                group "project: s100-prj-new-acc-0285" {
+                    deploymentNode "Instance Group" {
+                        technology "srs-s000-s100-gce-ig-nacc-us-west1-a"
+                        
+                        s100nacc02 = deploymentNode "S100NACC02" {
+                            technology "Windows Server 2022"
+                            containerInstance newaccount_api serviceInstance1
+                                infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
+                        }
 
-
-
-            group "project: s100-prj-new-acc-0285" {
-                deploymentNode "Instance Group" {
-                    technology "srs-s000-s100-gce-ig-nacc-us-west1-a"
-                    
-                    s100nacc02 = deploymentNode "S100NACC02" {
-                        technology "Windows Server 2022"
-                        containerInstance newaccount_api serviceInstance1
-                            infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
-                    }
-
-                    s100nacc01 = deploymentNode "S100NACC01" {
-                        technology "Windows Server 2022"
-                        containerInstance newaccount_api serviceInstance2
-                            infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
+                        s100nacc01 = deploymentNode "S100NACC01" {
+                            technology "Windows Server 2022"
+                            containerInstance newaccount_api serviceInstance2
+                                infrastructureNode "HealthCheck" "srs-s000-s100-gce-hc-https-nacc-us-west1" "Infra" 
+                        }
                     }
                 }
-           }
+                group "srs-s000-prj-s-net-7248" {
+                    ig = deploymentNode "..." {
+                        tag "NetArea"
+                        lb = infrastructureNode "Load Balancer" "Layer 7" "Google Cloud Platform - Cloud Load Balancing" "Google Cloud Platform - Cloud Load Balancing" {
+                            -> s100nacc01
+                            -> s100nacc02
+                        }
 
-           group "srs-s000-prj-s-net-7248" {
-                ig = deploymentNode "..." {
-                    tag "NetArea"
-                    lb = infrastructureNode "Load Balancer" "Layer 7" "Google Cloud Platform - Cloud Load Balancing" "Google Cloud Platform - Cloud Load Balancing" {
-                        -> s100nacc01
-                        -> s100nacc02
+                        psc = infrastructureNode "Private Service Connect" "X" "Private Service Connect" "Google Cloud Platform - Dedicated Interconnect" {
+                            -> lb
+                        }            
                     }
-
-                    psc = infrastructureNode "Private Service Connect" "X" "Private Service Connect" "Google Cloud Platform - Dedicated Interconnect" {
-                        -> lb
-                    }            
                 }
             }
 
@@ -164,6 +169,21 @@ container <name> [description] [technology] [tags] {
                     apigeei = infrastructureNode "Apigee Instance" "Tenant" "Google Cloud Platform - Apigee API Platform" "Google Cloud Platform - Apigee API Platform" {
                         -> psc
                     }       
+            }
+
+            cf = deploymentNode "Cloudflare" {
+                    technology "https-s008-prd.saferentsolutions.com"     
+                    cfi = infrastructureNode "Cloudflare Account" {
+                        description "api.saferentsolutions.com"
+                        -> apigeetp
+                    }       
+            }
+            enduser = deploymentNode "..." {
+                    tag "NetArea"
+                    cfii = infrastructureNode "API consumer" {
+                        tag "Person"
+                        -> cfi
+                    }      
             }
         }
     }
