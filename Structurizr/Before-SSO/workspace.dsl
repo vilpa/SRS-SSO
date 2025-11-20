@@ -21,6 +21,7 @@ container <name> [description] [technology] [tags] {
         mls = softwareSystem "MLS" "Platform for sharing real estate listings" "External PMS system"
         dyn = softwareSystem "Dynamics" "SafeRent CRM"
         eid = softwareSystem "Microsoft Entra ID" "SafeRentSolutions tenant" "Azure" 
+        auth0 = softwareSystem "Auth0" "Authentication server"
 
         pmsuser -> yardi "verifies identity, Forms"
         pmsuser -> appfolio "verifies identity, Forms"
@@ -196,19 +197,31 @@ container <name> [description] [technology] [tags] {
 
             mlsagent -> mls "verifies identity, SAML"
             mlsagent -> mrkt "public access"
+
+            // Auth0
+            srsweb -> auth0
+            auth0 -> auth0
         }
     }
 
     views {
         systemcontext srssystem "SystemContext" {
             include *
+            exclude auth0
         }
        
         container srssystem "ContainerDiagram" {
             include *
-            exclude client sll customer support accmanager mlsagent pmsuser iuser yardi mri appfolio mls dyn eid
+            exclude auth0 client sll customer support accmanager mlsagent pmsuser iuser yardi mri appfolio mls dyn eid
         }
         
+        dynamic srssystem {
+            title "SSO flow Web Based Apps"
+            client -> srsweb "Browses to"
+            srsweb -> auth0 "Redirects to"
+            auth0 -> auth0 "Either user logs in, or cookies is available"
+        }
+
         styles {
             element "Person" {
                 color #ffffff
