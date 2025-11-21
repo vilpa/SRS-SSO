@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-ui",
-  "lastModifiedDate" : "2025-11-20T12:53:19Z",
+  "lastModifiedDate" : "2025-11-21T12:29:32Z",
   "model" : {
     "people" : [ {
       "description" : "Member user accessing and managing applications",
@@ -16,16 +16,26 @@
       },
       "relationships" : [ {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "22",
-        "id" : "50",
+        "destinationId" : "27",
+        "id" : "55",
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "21",
-        "id" : "51",
-        "linkedRelationshipId" : "50",
+        "destinationId" : "26",
+        "id" : "56",
+        "linkedRelationshipId" : "55",
         "sourceId" : "1"
+      }, {
+        "destinationId" : "16",
+        "id" : "102",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "20",
+        "id" : "109",
+        "sourceId" : "1",
+        "tags" : "Relationship"
       } ],
       "tags" : "Element,Person"
     }, {
@@ -38,15 +48,15 @@
       },
       "relationships" : [ {
         "description" : "verifies identity, Forms, validates access, MR",
-        "destinationId" : "30",
-        "id" : "54",
+        "destinationId" : "35",
+        "id" : "59",
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, MR",
-        "destinationId" : "21",
-        "id" : "55",
-        "linkedRelationshipId" : "54",
+        "destinationId" : "26",
+        "id" : "60",
+        "linkedRelationshipId" : "59",
         "sourceId" : "2"
       } ],
       "tags" : "Element,Person"
@@ -60,15 +70,15 @@
       },
       "relationships" : [ {
         "description" : "verifies identity, Forms, validates access, MR",
-        "destinationId" : "30",
-        "id" : "52",
+        "destinationId" : "35",
+        "id" : "57",
         "sourceId" : "3",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, MR",
-        "destinationId" : "21",
-        "id" : "53",
-        "linkedRelationshipId" : "52",
+        "destinationId" : "26",
+        "id" : "58",
+        "linkedRelationshipId" : "57",
         "sourceId" : "3"
       } ],
       "tags" : "Element,Person"
@@ -83,37 +93,37 @@
       "relationships" : [ {
         "description" : "verifies identity, SRS Azure",
         "destinationId" : "13",
-        "id" : "19",
+        "id" : "24",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "22",
-        "id" : "56",
+        "destinationId" : "27",
+        "id" : "61",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "21",
-        "id" : "57",
-        "linkedRelationshipId" : "56",
+        "destinationId" : "26",
+        "id" : "62",
+        "linkedRelationshipId" : "61",
         "sourceId" : "4"
       }, {
         "description" : "verifies identity, Forms, validates access, MP",
-        "destinationId" : "25",
-        "id" : "58",
+        "destinationId" : "30",
+        "id" : "63",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "sends id token",
-        "destinationId" : "31",
-        "id" : "89",
+        "destinationId" : "36",
+        "id" : "94",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, gets token",
         "destinationId" : "14",
-        "id" : "92",
+        "id" : "97",
         "sourceId" : "4",
         "tags" : "Relationship"
       } ],
@@ -129,31 +139,31 @@
       "relationships" : [ {
         "description" : "verifies identity, SRS Azure",
         "destinationId" : "13",
-        "id" : "20",
+        "id" : "25",
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "22",
-        "id" : "59",
+        "destinationId" : "27",
+        "id" : "64",
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "21",
-        "id" : "60",
-        "linkedRelationshipId" : "59",
+        "destinationId" : "26",
+        "id" : "65",
+        "linkedRelationshipId" : "64",
         "sourceId" : "5"
       }, {
         "description" : "sends id token",
-        "destinationId" : "31",
-        "id" : "91",
+        "destinationId" : "36",
+        "id" : "96",
         "sourceId" : "5",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, gets token",
         "destinationId" : "14",
-        "id" : "93",
+        "id" : "98",
         "sourceId" : "5",
         "tags" : "Relationship"
       } ],
@@ -169,20 +179,20 @@
       "relationships" : [ {
         "description" : "verifies identity, SAML",
         "destinationId" : "12",
-        "id" : "94",
+        "id" : "99",
         "sourceId" : "6",
         "tags" : "Relationship"
       }, {
         "description" : "public access",
-        "destinationId" : "29",
-        "id" : "95",
+        "destinationId" : "34",
+        "id" : "100",
         "sourceId" : "6",
         "tags" : "Relationship"
       }, {
         "description" : "public access",
-        "destinationId" : "21",
-        "id" : "96",
-        "linkedRelationshipId" : "95",
+        "destinationId" : "26",
+        "id" : "101",
+        "linkedRelationshipId" : "100",
         "sourceId" : "6"
       } ],
       "tags" : "Element,Person"
@@ -197,32 +207,32 @@
       "relationships" : [ {
         "description" : "verifies identity, Forms",
         "destinationId" : "9",
-        "id" : "16",
+        "id" : "21",
         "sourceId" : "7",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms",
         "destinationId" : "11",
-        "id" : "17",
+        "id" : "22",
         "sourceId" : "7",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Okta",
         "destinationId" : "10",
-        "id" : "18",
+        "id" : "23",
         "sourceId" : "7",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "22",
-        "id" : "63",
+        "destinationId" : "27",
+        "id" : "68",
         "sourceId" : "7",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, Forms, validates access, SRS",
-        "destinationId" : "21",
-        "id" : "64",
-        "linkedRelationshipId" : "63",
+        "destinationId" : "26",
+        "id" : "69",
+        "linkedRelationshipId" : "68",
         "sourceId" : "7"
       } ],
       "tags" : "Element,Person"
@@ -236,15 +246,15 @@
       },
       "relationships" : [ {
         "description" : "public access",
-        "destinationId" : "29",
-        "id" : "61",
+        "destinationId" : "34",
+        "id" : "66",
         "sourceId" : "8",
         "tags" : "Relationship"
       }, {
         "description" : "public access",
-        "destinationId" : "21",
-        "id" : "62",
-        "linkedRelationshipId" : "61",
+        "destinationId" : "26",
+        "id" : "67",
+        "linkedRelationshipId" : "66",
         "sourceId" : "8"
       } ],
       "tags" : "Element,Person"
@@ -260,15 +270,15 @@
       },
       "relationships" : [ {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "23",
-        "id" : "65",
+        "destinationId" : "28",
+        "id" : "70",
         "sourceId" : "9",
         "tags" : "Relationship"
       }, {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "21",
-        "id" : "66",
-        "linkedRelationshipId" : "65",
+        "destinationId" : "26",
+        "id" : "71",
+        "linkedRelationshipId" : "70",
         "sourceId" : "9"
       } ],
       "tags" : "Element,Software System,External PMS system"
@@ -283,15 +293,15 @@
       },
       "relationships" : [ {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "23",
-        "id" : "67",
+        "destinationId" : "28",
+        "id" : "72",
         "sourceId" : "10",
         "tags" : "Relationship"
       }, {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "21",
-        "id" : "68",
-        "linkedRelationshipId" : "67",
+        "destinationId" : "26",
+        "id" : "73",
+        "linkedRelationshipId" : "72",
         "sourceId" : "10"
       } ],
       "tags" : "Element,Software System,External PMS system"
@@ -306,15 +316,15 @@
       },
       "relationships" : [ {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "23",
-        "id" : "69",
+        "destinationId" : "28",
+        "id" : "74",
         "sourceId" : "11",
         "tags" : "Relationship"
       }, {
         "description" : "sends credentials, MITS XML",
-        "destinationId" : "21",
-        "id" : "70",
-        "linkedRelationshipId" : "69",
+        "destinationId" : "26",
+        "id" : "75",
+        "linkedRelationshipId" : "74",
         "sourceId" : "11"
       } ],
       "tags" : "Element,Software System,External PMS system"
@@ -329,15 +339,15 @@
       },
       "relationships" : [ {
         "description" : "verifies identity, SAML, validates access, MR",
-        "destinationId" : "30",
-        "id" : "71",
+        "destinationId" : "35",
+        "id" : "76",
         "sourceId" : "12",
         "tags" : "Relationship"
       }, {
         "description" : "verifies identity, SAML, validates access, MR",
-        "destinationId" : "21",
-        "id" : "72",
-        "linkedRelationshipId" : "71",
+        "destinationId" : "26",
+        "id" : "77",
+        "linkedRelationshipId" : "76",
         "sourceId" : "12"
       } ],
       "tags" : "Element,Software System,External PMS system"
@@ -352,15 +362,15 @@
       },
       "relationships" : [ {
         "description" : "verifies App identity, Azure M2M",
-        "destinationId" : "24",
-        "id" : "73",
+        "destinationId" : "29",
+        "id" : "78",
         "sourceId" : "13",
         "tags" : "Relationship"
       }, {
         "description" : "verifies App identity, Azure M2M",
-        "destinationId" : "21",
-        "id" : "74",
-        "linkedRelationshipId" : "73",
+        "destinationId" : "26",
+        "id" : "79",
+        "linkedRelationshipId" : "78",
         "sourceId" : "13"
       } ],
       "tags" : "Element,Software System"
@@ -379,14 +389,111 @@
       "documentation" : { },
       "id" : "15",
       "location" : "Unspecified",
-      "name" : "Auth0",
+      "name" : "auth.saferentsolutions.com",
       "properties" : {
         "structurizr.dsl.identifier" : "auth0"
       },
       "relationships" : [ {
         "destinationId" : "15",
-        "id" : "99",
+        "id" : "104",
         "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "19",
+        "id" : "105",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "16",
+        "id" : "106",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "20",
+        "id" : "111",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "SRSWeb portal",
+      "documentation" : { },
+      "id" : "16",
+      "location" : "Unspecified",
+      "name" : "residentscreening.net",
+      "properties" : {
+        "structurizr.dsl.identifier" : "srsdomain"
+      },
+      "relationships" : [ {
+        "destinationId" : "15",
+        "id" : "103",
+        "sourceId" : "16",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "16",
+        "id" : "107",
+        "sourceId" : "16",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "17",
+        "id" : "108",
+        "sourceId" : "16",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Client Browser",
+      "documentation" : { },
+      "id" : "17",
+      "location" : "Unspecified",
+      "name" : "Browser Cookie Storage",
+      "properties" : {
+        "structurizr.dsl.identifier" : "clientbrowser"
+      },
+      "tags" : "Element,Software System,Web Browser"
+    }, {
+      "description" : "Client Browser",
+      "documentation" : { },
+      "id" : "18",
+      "location" : "Unspecified",
+      "name" : "Browser Local Storage",
+      "properties" : {
+        "structurizr.dsl.identifier" : "clientbrapp"
+      },
+      "tags" : "Element,Software System,Web Browser"
+    }, {
+      "description" : "Client Browser",
+      "documentation" : { },
+      "id" : "19",
+      "location" : "Unspecified",
+      "name" : "Browser Worker Storage",
+      "properties" : {
+        "structurizr.dsl.identifier" : "clientbrwrk"
+      },
+      "tags" : "Element,Software System,Web Browser"
+    }, {
+      "description" : "Billing portal",
+      "documentation" : { },
+      "id" : "20",
+      "location" : "Unspecified",
+      "name" : "onlinebilling.saferentsolutions.com",
+      "properties" : {
+        "structurizr.dsl.identifier" : "obdomain"
+      },
+      "relationships" : [ {
+        "destinationId" : "15",
+        "id" : "110",
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "20",
+        "id" : "112",
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "18",
+        "id" : "113",
+        "sourceId" : "20",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Software System"
@@ -395,21 +502,16 @@
         "description" : "Forms authentication, Role-based access on top of .Net Access DB",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "22",
+        "id" : "27",
         "name" : "SRS Web",
         "properties" : {
           "structurizr.dsl.identifier" : "srsweb"
         },
         "relationships" : [ {
           "description" : "saves credentials, permissions",
-          "destinationId" : "27",
-          "id" : "44",
-          "sourceId" : "22",
-          "tags" : "Relationship"
-        }, {
-          "destinationId" : "15",
-          "id" : "97",
-          "sourceId" : "22",
+          "destinationId" : "32",
+          "id" : "49",
+          "sourceId" : "27",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,SRSWeb",
@@ -418,7 +520,7 @@
         "description" : "API to support MITS, MITS 2.5, RETS, IDX, ILS",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "23",
+        "id" : "28",
         "name" : "SRS B2B",
         "properties" : {
           "structurizr.dsl.identifier" : "srsb2b"
@@ -429,7 +531,7 @@
         "description" : "Internal API to export transactions, clients, billing info",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "24",
+        "id" : "29",
         "name" : "Dynamics API",
         "properties" : {
           "structurizr.dsl.identifier" : "srsdyn"
@@ -440,16 +542,16 @@
         "description" : "Web UI",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "25",
+        "id" : "30",
         "name" : "SRS Monitoring SPA",
         "properties" : {
           "structurizr.dsl.identifier" : "mpf"
         },
         "relationships" : [ {
           "description" : "sends auth token",
-          "destinationId" : "26",
-          "id" : "28",
-          "sourceId" : "25",
+          "destinationId" : "31",
+          "id" : "33",
+          "sourceId" : "30",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser,MP",
@@ -458,7 +560,7 @@
         "description" : "API to provide transactions details",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "26",
+        "id" : "31",
         "name" : "SRS Monitoring API",
         "properties" : {
           "structurizr.dsl.identifier" : "mpb"
@@ -469,34 +571,34 @@
         "description" : "Credentials, Permissions, Profiles, ASP.NET Sessions",
         "documentation" : { },
         "group" : "SRS",
-        "id" : "27",
+        "id" : "32",
         "name" : "RegAccess users DB",
         "properties" : {
           "structurizr.dsl.identifier" : "regaccessdb"
         },
         "relationships" : [ {
           "description" : "gets credentials, permissions",
-          "destinationId" : "22",
-          "id" : "46",
-          "sourceId" : "27",
+          "destinationId" : "27",
+          "id" : "51",
+          "sourceId" : "32",
           "tags" : "Relationship"
         }, {
           "description" : "gets credentials, permissions",
-          "destinationId" : "30",
-          "id" : "47",
-          "sourceId" : "27",
+          "destinationId" : "35",
+          "id" : "52",
+          "sourceId" : "32",
           "tags" : "Relationship"
         }, {
           "description" : "gets credentials, permissions",
-          "destinationId" : "26",
-          "id" : "48",
-          "sourceId" : "27",
+          "destinationId" : "31",
+          "id" : "53",
+          "sourceId" : "32",
           "tags" : "Relationship"
         }, {
           "description" : "gets credentials, permissions",
-          "destinationId" : "23",
-          "id" : "49",
-          "sourceId" : "27",
+          "destinationId" : "28",
+          "id" : "54",
+          "sourceId" : "32",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Database",
@@ -505,7 +607,7 @@
         "description" : "MyRental entry point",
         "documentation" : { },
         "group" : "MyRental",
-        "id" : "29",
+        "id" : "34",
         "name" : "Markening Portal",
         "properties" : {
           "structurizr.dsl.identifier" : "mrkt"
@@ -516,16 +618,16 @@
         "description" : "MyRental screening portal",
         "documentation" : { },
         "group" : "MyRental",
-        "id" : "30",
+        "id" : "35",
         "name" : "MyRental",
         "properties" : {
           "structurizr.dsl.identifier" : "appsmyrental"
         },
         "relationships" : [ {
           "description" : "saves credentials, permissions",
-          "destinationId" : "27",
-          "id" : "45",
-          "sourceId" : "30",
+          "destinationId" : "32",
+          "id" : "50",
+          "sourceId" : "35",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Core,Utility,Shared",
@@ -534,46 +636,46 @@
         "description" : "Backoffice entry point",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "31",
+        "id" : "36",
         "name" : "Backoffice portal UI",
         "properties" : {
           "structurizr.dsl.identifier" : "boportalui"
         },
         "relationships" : [ {
           "description" : "redirects with permissions",
-          "destinationId" : "33",
-          "id" : "75",
-          "sourceId" : "31",
+          "destinationId" : "38",
+          "id" : "80",
+          "sourceId" : "36",
           "tags" : "Relationship"
         }, {
           "description" : "redirects with permissions",
-          "destinationId" : "35",
-          "id" : "76",
-          "sourceId" : "31",
+          "destinationId" : "40",
+          "id" : "81",
+          "sourceId" : "36",
           "tags" : "Relationship"
         }, {
           "description" : "redirects with permissions",
-          "destinationId" : "37",
-          "id" : "77",
-          "sourceId" : "31",
+          "destinationId" : "42",
+          "id" : "82",
+          "sourceId" : "36",
           "tags" : "Relationship"
         }, {
           "description" : "redirects with permissions",
-          "destinationId" : "39",
-          "id" : "78",
-          "sourceId" : "31",
+          "destinationId" : "44",
+          "id" : "83",
+          "sourceId" : "36",
           "tags" : "Relationship"
         }, {
           "description" : "redirects with permissions",
-          "destinationId" : "41",
-          "id" : "79",
-          "sourceId" : "31",
+          "destinationId" : "46",
+          "id" : "84",
+          "sourceId" : "36",
           "tags" : "Relationship"
         }, {
           "description" : "verifies identity, validates access",
-          "destinationId" : "32",
-          "id" : "90",
-          "sourceId" : "31",
+          "destinationId" : "37",
+          "id" : "95",
+          "sourceId" : "36",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -582,7 +684,7 @@
         "description" : "Backoffice entry point",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "32",
+        "id" : "37",
         "name" : "Backoffice portal",
         "properties" : {
           "structurizr.dsl.identifier" : "boportal"
@@ -590,8 +692,8 @@
         "relationships" : [ {
           "description" : "validates token",
           "destinationId" : "14",
-          "id" : "80",
-          "sourceId" : "32",
+          "id" : "85",
+          "sourceId" : "37",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Core,Utility,Shared",
@@ -600,16 +702,16 @@
         "description" : "Admin portal for centralized user and access management to backoffice apps",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "33",
+        "id" : "38",
         "name" : "Permissions Manager UI",
         "properties" : {
           "structurizr.dsl.identifier" : "pportalui"
         },
         "relationships" : [ {
           "description" : "gets local auth token",
-          "destinationId" : "34",
-          "id" : "82",
-          "sourceId" : "33",
+          "destinationId" : "39",
+          "id" : "87",
+          "sourceId" : "38",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -618,16 +720,16 @@
         "description" : "Admin portal for centralized user and access management to backoffice apps",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "34",
+        "id" : "39",
         "name" : "Permissions Manager",
         "properties" : {
           "structurizr.dsl.identifier" : "pportal"
         },
         "relationships" : [ {
           "description" : "persists credentials, permissions",
-          "destinationId" : "43",
-          "id" : "88",
-          "sourceId" : "34",
+          "destinationId" : "48",
+          "id" : "93",
+          "sourceId" : "39",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Core,Utility,Shared",
@@ -636,16 +738,16 @@
         "description" : "CBP Data management portal",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "35",
+        "id" : "40",
         "name" : "CBP Data UI",
         "properties" : {
           "structurizr.dsl.identifier" : "dmui"
         },
         "relationships" : [ {
           "description" : "gets local auth token",
-          "destinationId" : "36",
-          "id" : "83",
-          "sourceId" : "35",
+          "destinationId" : "41",
+          "id" : "88",
+          "sourceId" : "40",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -654,7 +756,7 @@
         "description" : "CBP Data management portal",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "36",
+        "id" : "41",
         "name" : "CBP Data",
         "properties" : {
           "structurizr.dsl.identifier" : "dm"
@@ -665,16 +767,16 @@
         "description" : "Criminal data processor",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "37",
+        "id" : "42",
         "name" : "CBP processor UI",
         "properties" : {
           "structurizr.dsl.identifier" : "crimsafeuiui"
         },
         "relationships" : [ {
           "description" : "gets local auth token",
-          "destinationId" : "38",
-          "id" : "84",
-          "sourceId" : "37",
+          "destinationId" : "43",
+          "id" : "89",
+          "sourceId" : "42",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -683,7 +785,7 @@
         "description" : "Criminal data processor",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "38",
+        "id" : "43",
         "name" : "CBP processor",
         "properties" : {
           "structurizr.dsl.identifier" : "crimsafeui"
@@ -694,16 +796,16 @@
         "description" : "Set data vendors parameters, priority, properties mapping",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "39",
+        "id" : "44",
         "name" : "Vendor Routing UI",
         "properties" : {
           "structurizr.dsl.identifier" : "tsui"
         },
         "relationships" : [ {
           "description" : "gets local auth token",
-          "destinationId" : "40",
-          "id" : "85",
-          "sourceId" : "39",
+          "destinationId" : "45",
+          "id" : "90",
+          "sourceId" : "44",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -712,7 +814,7 @@
         "description" : "Set data vendors parameters, priority, properties mapping",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "40",
+        "id" : "45",
         "name" : "Vendor Routing",
         "properties" : {
           "structurizr.dsl.identifier" : "ts"
@@ -723,16 +825,16 @@
         "description" : "Credit/Crim bureaus row data tracer",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "41",
+        "id" : "46",
         "name" : "Transactions Monitoring Portal UI",
         "properties" : {
           "structurizr.dsl.identifier" : "mtui"
         },
         "relationships" : [ {
           "description" : "gets local auth token",
-          "destinationId" : "42",
-          "id" : "86",
-          "sourceId" : "41",
+          "destinationId" : "47",
+          "id" : "91",
+          "sourceId" : "46",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
@@ -741,7 +843,7 @@
         "description" : "Credit/Crim bureaus row data tracer",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "42",
+        "id" : "47",
         "name" : "Transactions Monitoring Portal",
         "properties" : {
           "structurizr.dsl.identifier" : "mt"
@@ -752,16 +854,16 @@
         "description" : "Credentials, Permissions, Profiles",
         "documentation" : { },
         "group" : "BackOffice",
-        "id" : "43",
+        "id" : "48",
         "name" : "BO users DB",
         "properties" : {
           "structurizr.dsl.identifier" : "osdb"
         },
         "relationships" : [ {
           "description" : "gets credentials, permissions",
-          "destinationId" : "32",
-          "id" : "87",
-          "sourceId" : "43",
+          "destinationId" : "37",
+          "id" : "92",
+          "sourceId" : "48",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Database",
@@ -769,7 +871,7 @@
       } ],
       "description" : "Centralized system for rental screening and identity verification",
       "documentation" : { },
-      "id" : "21",
+      "id" : "26",
       "location" : "Unspecified",
       "name" : "SafeRent Platform",
       "properties" : {
@@ -778,21 +880,16 @@
       "relationships" : [ {
         "description" : "validates token",
         "destinationId" : "14",
-        "id" : "81",
-        "linkedRelationshipId" : "80",
-        "sourceId" : "21"
-      }, {
-        "destinationId" : "15",
-        "id" : "98",
-        "linkedRelationshipId" : "97",
-        "sourceId" : "21"
+        "id" : "86",
+        "linkedRelationshipId" : "85",
+        "sourceId" : "26"
       } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "SRS before SSO",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlICJTUlMgYmVmb3JlIFNTTyIgIkM0IE1vZGVsIGZvciBDdXJyZW50IFNvbHV0aW9uIEFyY2hpdGVjdHVyZSIgewoKLyoKY29udGFpbmVyIDxuYW1lPiBbZGVzY3JpcHRpb25dIFt0ZWNobm9sb2d5XSBbdGFnc10gewogICAgLi4uCn0KKi8KICAgIG1vZGVsIHsKICAgICAgICBjbGllbnQgPSBwZXJzb24gIkNsaWVudCIgIk1lbWJlciB1c2VyIGFjY2Vzc2luZyBhbmQgbWFuYWdpbmcgYXBwbGljYXRpb25zIgogICAgICAgIHNsbCA9IHBlcnNvbiAiU21hbGwgTGFuZGxvcmQiICJJbmRlcGVuZGVudCBwcm9wZXJ0eSBvd25lcnMgdXNpbmcgTXlSZW50YWwgZm9yIHRlbmFudCBzY3JlZW5pbmciCiAgICAgICAgY3VzdG9tZXIgPSBwZXJzb24gIkFwcGxpY2FudCIgIkFwcGxpY2FudCBvciB0ZW5hbnQgdW5kZXJnb2luZyBzY3JlZW5pbmciCiAgICAgICAgc3VwcG9ydCA9IHBlcnNvbiAiU3VwcG9ydCIgIlNhZmVSZW50IFNvbHV0aW9ucyBzdXBwb3J0IHRlYW0gYXNzaXN0aW5nIHVzZXJzIgogICAgICAgIGFjY21hbmFnZXIgPSBwZXJzb24gIkFjY291bnQgTWFuYWdlciIgIkNsaWVudCByZWxhdGlvbnNoaXAgYW5kIGFjY291bnQgcmVwcmVzZW50YXRpdmUiCiAgICAgICAgbWxzYWdlbnQgPSBwZXJzb24gIk1MUyBhZ2VudCIgIkxpY2Vuc2VkIHJlYWwgZXN0YXRlIGxpc3RpbmcgcmVwcmVzZW50YXRpdmUiCiAgICAgICAgcG1zdXNlciA9IHBlcnNvbiAiUE1TIHVzZXIiICJNYW5hZ2VzIHByb3BlcnR5IG9wZXJhdGlvbnMgYW5kIHRlbmFudCBhY3Rpdml0aWVzIgogICAgICAgIGl1c2VyID0gcGVyc29uICJpbnRlcm5ldCB1c2VyIiAiaW50ZXJuZXQgdXNlciB3aXRoIHB1YmxpYywgdW5hdXRoZW50aWNhdGVkIGFwcGxpY2F0aW9uIGFjY2VzcyIKCiAgICAgICAgeWFyZGkgPSBzb2Z0d2FyZVN5c3RlbSAiWWFyZGkiICJQcm9wZXJ0eSBtYW5hZ2VtZW50IGFuZCBhY2NvdW50aW5nIHNvZnR3YXJlIHNvbHV0aW9uIiAiRXh0ZXJuYWwgUE1TIHN5c3RlbSIKICAgICAgICBtcmkgPSBzb2Z0d2FyZVN5c3RlbSAiTVJJIiAiRW50ZXJwcmlzZSByZWFsIGVzdGF0ZSBtYW5hZ2VtZW50IGFuZCBhbmFseXRpY3MgcGxhdGZvcm0iICJFeHRlcm5hbCBQTVMgc3lzdGVtIgogICAgICAgIGFwcGZvbGlvID0gc29mdHdhcmVTeXN0ZW0gIkFwcEZvbGlvIiAiQ2xvdWQtYmFzZWQgcHJvcGVydHkgbWFuYWdlbWVudCBhbmQgbGVhc2luZyBzb2Z0d2FyZSIgIkV4dGVybmFsIFBNUyBzeXN0ZW0iCiAgICAgICAgbWxzID0gc29mdHdhcmVTeXN0ZW0gIk1MUyIgIlBsYXRmb3JtIGZvciBzaGFyaW5nIHJlYWwgZXN0YXRlIGxpc3RpbmdzIiAiRXh0ZXJuYWwgUE1TIHN5c3RlbSIKICAgICAgICBkeW4gPSBzb2Z0d2FyZVN5c3RlbSAiRHluYW1pY3MiICJTYWZlUmVudCBDUk0iCiAgICAgICAgZWlkID0gc29mdHdhcmVTeXN0ZW0gIk1pY3Jvc29mdCBFbnRyYSBJRCIgIlNhZmVSZW50U29sdXRpb25zIHRlbmFudCIgIkF6dXJlIiAKICAgICAgICBhdXRoMCA9IHNvZnR3YXJlU3lzdGVtICJBdXRoMCIgIkF1dGhlbnRpY2F0aW9uIHNlcnZlciIKCiAgICAgICAgcG1zdXNlciAtPiB5YXJkaSAidmVyaWZpZXMgaWRlbnRpdHksIEZvcm1zIgogICAgICAgIHBtc3VzZXIgLT4gYXBwZm9saW8gInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcyIKICAgICAgICBwbXN1c2VyIC0+IG1yaSAidmVyaWZpZXMgaWRlbnRpdHksIE9rdGEiCiAgICAgICAgc3VwcG9ydCAtPiBkeW4gInZlcmlmaWVzIGlkZW50aXR5LCBTUlMgQXp1cmUiCiAgICAgICAgYWNjbWFuYWdlciAtPiBkeW4gInZlcmlmaWVzIGlkZW50aXR5LCBTUlMgQXp1cmUiCgogICAgICAgIHNyc3N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJTYWZlUmVudCBQbGF0Zm9ybSIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ2VudHJhbGl6ZWQgc3lzdGVtIGZvciByZW50YWwgc2NyZWVuaW5nIGFuZCBpZGVudGl0eSB2ZXJpZmljYXRpb24iCgogICAgICAgICAgICBncm91cCAiU1JTIiB7CiAgICAgICAgICAgICAgICBzcnN3ZWIgPSBjb250YWluZXIgIlNSUyBXZWIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCBGb3JtcyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiRm9ybXMgYXV0aGVudGljYXRpb24sIFJvbGUtYmFzZWQgYWNjZXNzIG9uIHRvcCBvZiAuTmV0IEFjY2VzcyBEQiIKICAgICAgICAgICAgICAgICAgICB0YWdzICJTUlNXZWIiCgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgc3JzYjJiID0gY29udGFpbmVyICJTUlMgQjJCIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiLk5ldEZyYW1ld29yayA0LjgsIEFTUC5ORVQsIFdlYiBBUEkiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkFQSSB0byBzdXBwb3J0IE1JVFMsIE1JVFMgMi41LCBSRVRTLCBJRFgsIElMUyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJTUlNXZWIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHNyc2R5biA9IGNvbnRhaW5lciAiRHluYW1pY3MgQVBJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiLk5FVCwgV2ViIEFQSSIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSW50ZXJuYWwgQVBJIHRvIGV4cG9ydCB0cmFuc2FjdGlvbnMsIGNsaWVudHMsIGJpbGxpbmcgaW5mbyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJEeW5hbWljcyIgICAgICAgIAogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIG1wZiA9IGNvbnRhaW5lciAiU1JTIE1vbml0b3JpbmcgU1BBIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiV2ViIFVJIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyLCBNUCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgbXBiID0gY29udGFpbmVyICJTUlMgTW9uaXRvcmluZyBBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVULCBXZWIgQVBJIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBUEkgdG8gcHJvdmlkZSB0cmFuc2FjdGlvbnMgZGV0YWlscyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb3JlLCBVdGlsaXR5LCBTaGFyZWQiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHJlZ2FjY2Vzc2RiID0gY29udGFpbmVyICJSZWdBY2Nlc3MgdXNlcnMgREIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJTUUxTZXJ2ZXIiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyZWRlbnRpYWxzLCBQZXJtaXNzaW9ucywgUHJvZmlsZXMsIEFTUC5ORVQgU2Vzc2lvbnMiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIG1wZiAtPiBtcGIgInNlbmRzIGF1dGggdG9rZW4iCgogICAgICAgICAgICBncm91cCAiTXlSZW50YWwiIHsKICAgICAgICAgICAgICAgIG1ya3QgPSBjb250YWluZXIgIk1hcmtlbmluZyBQb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCwgTVZDIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNeVJlbnRhbCBlbnRyeSBwb2ludCIKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb3JlLCBVdGlsaXR5LCBTaGFyZWQiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGFwcHNteXJlbnRhbCA9IGNvbnRhaW5lciAiTXlSZW50YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCwgTVZDIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNeVJlbnRhbCBzY3JlZW5pbmcgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgZ3JvdXAgIkJhY2tPZmZpY2UiIHsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgYm9wb3J0YWx1aSA9IGNvbnRhaW5lciAiQmFja29mZmljZSBwb3J0YWwgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJCYWNrb2ZmaWNlIGVudHJ5IHBvaW50IgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBib3BvcnRhbCA9IGNvbnRhaW5lciAiQmFja29mZmljZSBwb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkJhY2tvZmZpY2UgZW50cnkgcG9pbnQiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29yZSwgVXRpbGl0eSwgU2hhcmVkIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBwcG9ydGFsdWkgPSBjb250YWluZXIgIlBlcm1pc3Npb25zIE1hbmFnZXIgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBZG1pbiBwb3J0YWwgZm9yIGNlbnRyYWxpemVkIHVzZXIgYW5kIGFjY2VzcyBtYW5hZ2VtZW50IHRvIGJhY2tvZmZpY2UgYXBwcyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJXZWIgQnJvd3NlciIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgcHBvcnRhbCA9IGNvbnRhaW5lciAiUGVybWlzc2lvbnMgTWFuYWdlciIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIi5ORVQgOCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQWRtaW4gcG9ydGFsIGZvciBjZW50cmFsaXplZCB1c2VyIGFuZCBhY2Nlc3MgbWFuYWdlbWVudCB0byBiYWNrb2ZmaWNlIGFwcHMiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29yZSwgVXRpbGl0eSwgU2hhcmVkIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkbXVpID0gY29udGFpbmVyICJDQlAgRGF0YSBVSSIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkFuZ3VsYXIgMTciCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNCUCBEYXRhIG1hbmFnZW1lbnQgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkbSA9IGNvbnRhaW5lciAiQ0JQIERhdGEiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNCUCBEYXRhIG1hbmFnZW1lbnQgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY3JpbXNhZmV1aXVpID0gY29udGFpbmVyICJDQlAgcHJvY2Vzc29yIFVJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ3JpbWluYWwgZGF0YSBwcm9jZXNzb3IiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGNyaW1zYWZldWkgPSBjb250YWluZXIgIkNCUCBwcm9jZXNzb3IiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyaW1pbmFsIGRhdGEgcHJvY2Vzc29yIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgdHN1aSA9IGNvbnRhaW5lciAiVmVuZG9yIFJvdXRpbmcgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJTZXQgZGF0YSB2ZW5kb3JzIHBhcmFtZXRlcnMsIHByaW9yaXR5LCBwcm9wZXJ0aWVzIG1hcHBpbmciCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHRzID0gY29udGFpbmVyICJWZW5kb3IgUm91dGluZyIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIi5ORVQgOCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiU2V0IGRhdGEgdmVuZG9ycyBwYXJhbWV0ZXJzLCBwcmlvcml0eSwgcHJvcGVydGllcyBtYXBwaW5nIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgbXR1aSA9IGNvbnRhaW5lciAiVHJhbnNhY3Rpb25zIE1vbml0b3JpbmcgUG9ydGFsIFVJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ3JlZGl0L0NyaW0gYnVyZWF1cyByb3cgZGF0YSB0cmFjZXIiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG10ID0gY29udGFpbmVyICJUcmFuc2FjdGlvbnMgTW9uaXRvcmluZyBQb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyZWRpdC9DcmltIGJ1cmVhdXMgcm93IGRhdGEgdHJhY2VyIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgb3NkYiA9IGNvbnRhaW5lciAiQk8gdXNlcnMgREIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJQb3N0Z3JlU1FMIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJDcmVkZW50aWFscywgUGVybWlzc2lvbnMsIFByb2ZpbGVzIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICBzcnN3ZWIgLT4gcmVnYWNjZXNzZGIgInNhdmVzIGNyZWRlbnRpYWxzLCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYXBwc215cmVudGFsIC0+IHJlZ2FjY2Vzc2RiICJzYXZlcyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IHNyc3dlYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IGFwcHNteXJlbnRhbCAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IG1wYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IHNyc2IyYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGNsaWVudCAtPiBzcnN3ZWIgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgU1JTIgogICAgICAgICAgICBjdXN0b21lciAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVIiCiAgICAgICAgICAgIHNsbCAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVIiCiAgICAgICAgICAgIHN1cHBvcnQgLT4gc3Jzd2ViICJ2ZXJpZmllcyBpZGVudGl0eSwgRm9ybXMsIHZhbGlkYXRlcyBhY2Nlc3MsIFNSUyIKICAgICAgICAgICAgc3VwcG9ydCAtPiBtcGYgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVAiCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gc3Jzd2ViICJ2ZXJpZmllcyBpZGVudGl0eSwgRm9ybXMsIHZhbGlkYXRlcyBhY2Nlc3MsIFNSUyIKICAgICAgICAgICAgaXVzZXIgLT4gbXJrdCAicHVibGljIGFjY2VzcyIKICAgICAgICAgICAgcG1zdXNlciAtPiBzcnN3ZWIgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgU1JTIgoKICAgICAgICAgICAgeWFyZGkgLT4gc3JzYjJiICJzZW5kcyBjcmVkZW50aWFscywgTUlUUyBYTUwiCiAgICAgICAgICAgIG1yaSAtPiBzcnNiMmIgInNlbmRzIGNyZWRlbnRpYWxzLCBNSVRTIFhNTCIKICAgICAgICAgICAgYXBwZm9saW8gLT4gc3JzYjJiICJzZW5kcyBjcmVkZW50aWFscywgTUlUUyBYTUwiCiAgICAgICAgICAgIG1scyAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBTQU1MLCB2YWxpZGF0ZXMgYWNjZXNzLCBNUiIKICAgICAgICAgICAgZHluIC0+IHNyc2R5biAidmVyaWZpZXMgQXBwIGlkZW50aXR5LCBBenVyZSBNMk0iCgogICAgICAgICAgICBib3BvcnRhbHVpIC0+IHBwb3J0YWx1aSAicmVkaXJlY3RzIHdpdGggcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGJvcG9ydGFsdWkgLT4gZG11aSAicmVkaXJlY3RzIHdpdGggcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGJvcG9ydGFsdWkgLT4gY3JpbXNhZmV1aXVpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiB0c3VpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiBtdHVpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWwgLT4gZWlkICJ2YWxpZGF0ZXMgdG9rZW4iCgogICAgICAgICAgICBwcG9ydGFsdWkgLT4gcHBvcnRhbCAiZ2V0cyBsb2NhbCBhdXRoIHRva2VuIgogICAgICAgICAgICBkbXVpIC0+IGRtICJnZXRzIGxvY2FsIGF1dGggdG9rZW4iCiAgICAgICAgICAgIGNyaW1zYWZldWl1aSAtPiBjcmltc2FmZXVpICJnZXRzIGxvY2FsIGF1dGggdG9rZW4iCiAgICAgICAgICAgIHRzdWkgLT4gdHMgImdldHMgbG9jYWwgYXV0aCB0b2tlbiIKICAgICAgICAgICAgbXR1aSAtPiBtdCAiZ2V0cyBsb2NhbCBhdXRoIHRva2VuIgogICAgICAgICAgICAKICAgICAgICAgICAgb3NkYiAtPiBib3BvcnRhbCAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHBwb3J0YWwgLT4gb3NkYiAicGVyc2lzdHMgY3JlZGVudGlhbHMsIHBlcm1pc3Npb25zIgoKICAgICAgICAgICAgc3VwcG9ydCAtPiBib3BvcnRhbHVpICJzZW5kcyBpZCB0b2tlbiIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiBib3BvcnRhbCAidmVyaWZpZXMgaWRlbnRpdHksIHZhbGlkYXRlcyBhY2Nlc3MiCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gYm9wb3J0YWx1aSAic2VuZHMgaWQgdG9rZW4iCgogICAgICAgICAgICBzdXBwb3J0IC0+IGVpZCAidmVyaWZpZXMgaWRlbnRpdHksIGdldHMgdG9rZW4iCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gZWlkICJ2ZXJpZmllcyBpZGVudGl0eSwgZ2V0cyB0b2tlbiIKCiAgICAgICAgICAgIG1sc2FnZW50IC0+IG1scyAidmVyaWZpZXMgaWRlbnRpdHksIFNBTUwiCiAgICAgICAgICAgIG1sc2FnZW50IC0+IG1ya3QgInB1YmxpYyBhY2Nlc3MiCgogICAgICAgICAgICAvLyBBdXRoMAogICAgICAgICAgICBzcnN3ZWIgLT4gYXV0aDAKICAgICAgICAgICAgYXV0aDAgLT4gYXV0aDAKICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbWNvbnRleHQgc3Jzc3lzdGVtICJTeXN0ZW1Db250ZXh0IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlIGF1dGgwCiAgICAgICAgfQogICAgICAgCiAgICAgICAgY29udGFpbmVyIHNyc3N5c3RlbSAiQ29udGFpbmVyRGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSBhdXRoMCBjbGllbnQgc2xsIGN1c3RvbWVyIHN1cHBvcnQgYWNjbWFuYWdlciBtbHNhZ2VudCBwbXN1c2VyIGl1c2VyIHlhcmRpIG1yaSBhcHBmb2xpbyBtbHMgZHluIGVpZAogICAgICAgIH0KICAgICAgICAKICAgICAgICBkeW5hbWljIHNyc3N5c3RlbSB7CiAgICAgICAgICAgIHRpdGxlICJTU08gZmxvdyBXZWIgQmFzZWQgQXBwcyIKICAgICAgICAgICAgY2xpZW50IC0+IHNyc3dlYiAiQnJvd3NlcyB0byIKICAgICAgICAgICAgc3Jzd2ViIC0+IGF1dGgwICJSZWRpcmVjdHMgdG8iCiAgICAgICAgICAgIGF1dGgwIC0+IGF1dGgwICJFaXRoZXIgdXNlciBsb2dzIGluLCBvciBjb29raWVzIGlzIGF2YWlsYWJsZSIKICAgICAgICB9CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICAgICAgZm9udFNpemUgMjIKICAgICAgICAgICAgICAgIHNoYXBlIFBlcnNvbgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ3VzdG9tZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkJhbmsgU3RhZmYiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5OTk5OQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRXhpc3RpbmcgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM5OTk5OTkKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzQzOGRkNQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBCcm93c2VyIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiTW9iaWxlIEFwcCIgewogICAgICAgICAgICAgICAgc2hhcGUgTW9iaWxlRGV2aWNlTGFuZHNjYXBlCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ29tcG9uZW50IiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM4NWJiZjAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJGYWlsb3ZlciIgewogICAgICAgICAgICAgICAgb3BhY2l0eSAyNQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIktleVZhdWx0IiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgICAgIHNoYXBlIEZvbGRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlF1ZXVlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBQaXBlCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAKICAgICAgICB0aGVtZSBodHRwczovL3N0YXRpYy5zdHJ1Y3R1cml6ci5jb20vdGhlbWVzL21pY3Jvc29mdC1henVyZS0yMDIxLjAxLjI2L3RoZW1lLmpzb24KICAgIH0KfQ=="
+    "structurizr.dsl" : "d29ya3NwYWNlICJTUlMgYmVmb3JlIFNTTyIgIkM0IE1vZGVsIGZvciBDdXJyZW50IFNvbHV0aW9uIEFyY2hpdGVjdHVyZSIgewoKLyoKY29udGFpbmVyIDxuYW1lPiBbZGVzY3JpcHRpb25dIFt0ZWNobm9sb2d5XSBbdGFnc10gewogICAgLi4uCn0KKi8KICAgIG1vZGVsIHsKICAgICAgICBjbGllbnQgPSBwZXJzb24gIkNsaWVudCIgIk1lbWJlciB1c2VyIGFjY2Vzc2luZyBhbmQgbWFuYWdpbmcgYXBwbGljYXRpb25zIgogICAgICAgIHNsbCA9IHBlcnNvbiAiU21hbGwgTGFuZGxvcmQiICJJbmRlcGVuZGVudCBwcm9wZXJ0eSBvd25lcnMgdXNpbmcgTXlSZW50YWwgZm9yIHRlbmFudCBzY3JlZW5pbmciCiAgICAgICAgY3VzdG9tZXIgPSBwZXJzb24gIkFwcGxpY2FudCIgIkFwcGxpY2FudCBvciB0ZW5hbnQgdW5kZXJnb2luZyBzY3JlZW5pbmciCiAgICAgICAgc3VwcG9ydCA9IHBlcnNvbiAiU3VwcG9ydCIgIlNhZmVSZW50IFNvbHV0aW9ucyBzdXBwb3J0IHRlYW0gYXNzaXN0aW5nIHVzZXJzIgogICAgICAgIGFjY21hbmFnZXIgPSBwZXJzb24gIkFjY291bnQgTWFuYWdlciIgIkNsaWVudCByZWxhdGlvbnNoaXAgYW5kIGFjY291bnQgcmVwcmVzZW50YXRpdmUiCiAgICAgICAgbWxzYWdlbnQgPSBwZXJzb24gIk1MUyBhZ2VudCIgIkxpY2Vuc2VkIHJlYWwgZXN0YXRlIGxpc3RpbmcgcmVwcmVzZW50YXRpdmUiCiAgICAgICAgcG1zdXNlciA9IHBlcnNvbiAiUE1TIHVzZXIiICJNYW5hZ2VzIHByb3BlcnR5IG9wZXJhdGlvbnMgYW5kIHRlbmFudCBhY3Rpdml0aWVzIgogICAgICAgIGl1c2VyID0gcGVyc29uICJpbnRlcm5ldCB1c2VyIiAiaW50ZXJuZXQgdXNlciB3aXRoIHB1YmxpYywgdW5hdXRoZW50aWNhdGVkIGFwcGxpY2F0aW9uIGFjY2VzcyIKCiAgICAgICAgeWFyZGkgPSBzb2Z0d2FyZVN5c3RlbSAiWWFyZGkiICJQcm9wZXJ0eSBtYW5hZ2VtZW50IGFuZCBhY2NvdW50aW5nIHNvZnR3YXJlIHNvbHV0aW9uIiAiRXh0ZXJuYWwgUE1TIHN5c3RlbSIKICAgICAgICBtcmkgPSBzb2Z0d2FyZVN5c3RlbSAiTVJJIiAiRW50ZXJwcmlzZSByZWFsIGVzdGF0ZSBtYW5hZ2VtZW50IGFuZCBhbmFseXRpY3MgcGxhdGZvcm0iICJFeHRlcm5hbCBQTVMgc3lzdGVtIgogICAgICAgIGFwcGZvbGlvID0gc29mdHdhcmVTeXN0ZW0gIkFwcEZvbGlvIiAiQ2xvdWQtYmFzZWQgcHJvcGVydHkgbWFuYWdlbWVudCBhbmQgbGVhc2luZyBzb2Z0d2FyZSIgIkV4dGVybmFsIFBNUyBzeXN0ZW0iCiAgICAgICAgbWxzID0gc29mdHdhcmVTeXN0ZW0gIk1MUyIgIlBsYXRmb3JtIGZvciBzaGFyaW5nIHJlYWwgZXN0YXRlIGxpc3RpbmdzIiAiRXh0ZXJuYWwgUE1TIHN5c3RlbSIKICAgICAgICBkeW4gPSBzb2Z0d2FyZVN5c3RlbSAiRHluYW1pY3MiICJTYWZlUmVudCBDUk0iCiAgICAgICAgZWlkID0gc29mdHdhcmVTeXN0ZW0gIk1pY3Jvc29mdCBFbnRyYSBJRCIgIlNhZmVSZW50U29sdXRpb25zIHRlbmFudCIgIkF6dXJlIiAKICAgICAgICAKICAgICAgICBhdXRoMCA9IHNvZnR3YXJlU3lzdGVtICJhdXRoLnNhZmVyZW50c29sdXRpb25zLmNvbSIgIkF1dGhlbnRpY2F0aW9uIHNlcnZlciIKICAgICAgICBzcnNkb21haW4gPSBzb2Z0d2FyZVN5c3RlbSAicmVzaWRlbnRzY3JlZW5pbmcubmV0IiAiU1JTV2ViIHBvcnRhbCIKICAgICAgICBjbGllbnRicm93c2VyID0gc29mdHdhcmVTeXN0ZW0gIkJyb3dzZXIgQ29va2llIFN0b3JhZ2UiICJDbGllbnQgQnJvd3NlciIgIldlYiBCcm93c2VyIgogICAgICAgIGNsaWVudGJyYXBwID0gc29mdHdhcmVTeXN0ZW0gIkJyb3dzZXIgTG9jYWwgU3RvcmFnZSIgIkNsaWVudCBCcm93c2VyIiAiV2ViIEJyb3dzZXIiCiAgICAgICAgY2xpZW50YnJ3cmsgPSBzb2Z0d2FyZVN5c3RlbSAiQnJvd3NlciBXb3JrZXIgU3RvcmFnZSIgIkNsaWVudCBCcm93c2VyIiAiV2ViIEJyb3dzZXIiCiAgICAgICAgb2Jkb21haW4gPSBzb2Z0d2FyZVN5c3RlbSAib25saW5lYmlsbGluZy5zYWZlcmVudHNvbHV0aW9ucy5jb20iICJCaWxsaW5nIHBvcnRhbCIKCiAgICAgICAgcG1zdXNlciAtPiB5YXJkaSAidmVyaWZpZXMgaWRlbnRpdHksIEZvcm1zIgogICAgICAgIHBtc3VzZXIgLT4gYXBwZm9saW8gInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcyIKICAgICAgICBwbXN1c2VyIC0+IG1yaSAidmVyaWZpZXMgaWRlbnRpdHksIE9rdGEiCiAgICAgICAgc3VwcG9ydCAtPiBkeW4gInZlcmlmaWVzIGlkZW50aXR5LCBTUlMgQXp1cmUiCiAgICAgICAgYWNjbWFuYWdlciAtPiBkeW4gInZlcmlmaWVzIGlkZW50aXR5LCBTUlMgQXp1cmUiCgogICAgICAgIHNyc3N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJTYWZlUmVudCBQbGF0Zm9ybSIgewogICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ2VudHJhbGl6ZWQgc3lzdGVtIGZvciByZW50YWwgc2NyZWVuaW5nIGFuZCBpZGVudGl0eSB2ZXJpZmljYXRpb24iCgogICAgICAgICAgICBncm91cCAiU1JTIiB7CiAgICAgICAgICAgICAgICBzcnN3ZWIgPSBjb250YWluZXIgIlNSUyBXZWIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCBGb3JtcyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiRm9ybXMgYXV0aGVudGljYXRpb24sIFJvbGUtYmFzZWQgYWNjZXNzIG9uIHRvcCBvZiAuTmV0IEFjY2VzcyBEQiIKICAgICAgICAgICAgICAgICAgICB0YWdzICJTUlNXZWIiCgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgc3JzYjJiID0gY29udGFpbmVyICJTUlMgQjJCIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiLk5ldEZyYW1ld29yayA0LjgsIEFTUC5ORVQsIFdlYiBBUEkiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkFQSSB0byBzdXBwb3J0IE1JVFMsIE1JVFMgMi41LCBSRVRTLCBJRFgsIElMUyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJTUlNXZWIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHNyc2R5biA9IGNvbnRhaW5lciAiRHluYW1pY3MgQVBJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiLk5FVCwgV2ViIEFQSSIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiSW50ZXJuYWwgQVBJIHRvIGV4cG9ydCB0cmFuc2FjdGlvbnMsIGNsaWVudHMsIGJpbGxpbmcgaW5mbyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJEeW5hbWljcyIgICAgICAgIAogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIG1wZiA9IGNvbnRhaW5lciAiU1JTIE1vbml0b3JpbmcgU1BBIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiV2ViIFVJIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyLCBNUCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgbXBiID0gY29udGFpbmVyICJTUlMgTW9uaXRvcmluZyBBUEkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVULCBXZWIgQVBJIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBUEkgdG8gcHJvdmlkZSB0cmFuc2FjdGlvbnMgZGV0YWlscyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb3JlLCBVdGlsaXR5LCBTaGFyZWQiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHJlZ2FjY2Vzc2RiID0gY29udGFpbmVyICJSZWdBY2Nlc3MgdXNlcnMgREIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJTUUxTZXJ2ZXIiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyZWRlbnRpYWxzLCBQZXJtaXNzaW9ucywgUHJvZmlsZXMsIEFTUC5ORVQgU2Vzc2lvbnMiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIG1wZiAtPiBtcGIgInNlbmRzIGF1dGggdG9rZW4iCgogICAgICAgICAgICBncm91cCAiTXlSZW50YWwiIHsKICAgICAgICAgICAgICAgIG1ya3QgPSBjb250YWluZXIgIk1hcmtlbmluZyBQb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCwgTVZDIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNeVJlbnRhbCBlbnRyeSBwb2ludCIKICAgICAgICAgICAgICAgICAgICB0YWdzICJDb3JlLCBVdGlsaXR5LCBTaGFyZWQiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGFwcHNteXJlbnRhbCA9IGNvbnRhaW5lciAiTXlSZW50YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTmV0RnJhbWV3b3JrIDQuOCwgQVNQLk5FVCwgTVZDIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJNeVJlbnRhbCBzY3JlZW5pbmcgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgZ3JvdXAgIkJhY2tPZmZpY2UiIHsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgYm9wb3J0YWx1aSA9IGNvbnRhaW5lciAiQmFja29mZmljZSBwb3J0YWwgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJCYWNrb2ZmaWNlIGVudHJ5IHBvaW50IgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBib3BvcnRhbCA9IGNvbnRhaW5lciAiQmFja29mZmljZSBwb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkJhY2tvZmZpY2UgZW50cnkgcG9pbnQiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29yZSwgVXRpbGl0eSwgU2hhcmVkIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBwcG9ydGFsdWkgPSBjb250YWluZXIgIlBlcm1pc3Npb25zIE1hbmFnZXIgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJBZG1pbiBwb3J0YWwgZm9yIGNlbnRyYWxpemVkIHVzZXIgYW5kIGFjY2VzcyBtYW5hZ2VtZW50IHRvIGJhY2tvZmZpY2UgYXBwcyIKICAgICAgICAgICAgICAgICAgICB0YWdzICJXZWIgQnJvd3NlciIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgcHBvcnRhbCA9IGNvbnRhaW5lciAiUGVybWlzc2lvbnMgTWFuYWdlciIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIi5ORVQgOCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQWRtaW4gcG9ydGFsIGZvciBjZW50cmFsaXplZCB1c2VyIGFuZCBhY2Nlc3MgbWFuYWdlbWVudCB0byBiYWNrb2ZmaWNlIGFwcHMiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiQ29yZSwgVXRpbGl0eSwgU2hhcmVkIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkbXVpID0gY29udGFpbmVyICJDQlAgRGF0YSBVSSIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIkFuZ3VsYXIgMTciCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNCUCBEYXRhIG1hbmFnZW1lbnQgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIldlYiBCcm93c2VyIiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBkbSA9IGNvbnRhaW5lciAiQ0JQIERhdGEiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNCUCBEYXRhIG1hbmFnZW1lbnQgcG9ydGFsIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgY3JpbXNhZmV1aXVpID0gY29udGFpbmVyICJDQlAgcHJvY2Vzc29yIFVJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ3JpbWluYWwgZGF0YSBwcm9jZXNzb3IiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGNyaW1zYWZldWkgPSBjb250YWluZXIgIkNCUCBwcm9jZXNzb3IiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyaW1pbmFsIGRhdGEgcHJvY2Vzc29yIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgdHN1aSA9IGNvbnRhaW5lciAiVmVuZG9yIFJvdXRpbmcgVUkiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBbmd1bGFyIDE3IgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJTZXQgZGF0YSB2ZW5kb3JzIHBhcmFtZXRlcnMsIHByaW9yaXR5LCBwcm9wZXJ0aWVzIG1hcHBpbmciCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHRzID0gY29udGFpbmVyICJWZW5kb3IgUm91dGluZyIgewogICAgICAgICAgICAgICAgICAgIHRlY2hub2xvZ3kgIi5ORVQgOCIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiU2V0IGRhdGEgdmVuZG9ycyBwYXJhbWV0ZXJzLCBwcmlvcml0eSwgcHJvcGVydGllcyBtYXBwaW5nIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgbXR1aSA9IGNvbnRhaW5lciAiVHJhbnNhY3Rpb25zIE1vbml0b3JpbmcgUG9ydGFsIFVJIiB7CiAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQW5ndWxhciAxNyIKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQ3JlZGl0L0NyaW0gYnVyZWF1cyByb3cgZGF0YSB0cmFjZXIiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiV2ViIEJyb3dzZXIiICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG10ID0gY29udGFpbmVyICJUcmFuc2FjdGlvbnMgTW9uaXRvcmluZyBQb3J0YWwiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIuTkVUIDgiCiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNyZWRpdC9DcmltIGJ1cmVhdXMgcm93IGRhdGEgdHJhY2VyIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkNvcmUsIFV0aWxpdHksIFNoYXJlZCIgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgb3NkYiA9IGNvbnRhaW5lciAiQk8gdXNlcnMgREIiIHsKICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJQb3N0Z3JlU1FMIgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJDcmVkZW50aWFscywgUGVybWlzc2lvbnMsIFByb2ZpbGVzIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIkRhdGFiYXNlIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgICAgICBzcnN3ZWIgLT4gcmVnYWNjZXNzZGIgInNhdmVzIGNyZWRlbnRpYWxzLCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYXBwc215cmVudGFsIC0+IHJlZ2FjY2Vzc2RiICJzYXZlcyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IHNyc3dlYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IGFwcHNteXJlbnRhbCAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IG1wYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHJlZ2FjY2Vzc2RiIC0+IHNyc2IyYiAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGNsaWVudCAtPiBzcnN3ZWIgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgU1JTIgogICAgICAgICAgICBjdXN0b21lciAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVIiCiAgICAgICAgICAgIHNsbCAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVIiCiAgICAgICAgICAgIHN1cHBvcnQgLT4gc3Jzd2ViICJ2ZXJpZmllcyBpZGVudGl0eSwgRm9ybXMsIHZhbGlkYXRlcyBhY2Nlc3MsIFNSUyIKICAgICAgICAgICAgc3VwcG9ydCAtPiBtcGYgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgTVAiCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gc3Jzd2ViICJ2ZXJpZmllcyBpZGVudGl0eSwgRm9ybXMsIHZhbGlkYXRlcyBhY2Nlc3MsIFNSUyIKICAgICAgICAgICAgaXVzZXIgLT4gbXJrdCAicHVibGljIGFjY2VzcyIKICAgICAgICAgICAgcG1zdXNlciAtPiBzcnN3ZWIgInZlcmlmaWVzIGlkZW50aXR5LCBGb3JtcywgdmFsaWRhdGVzIGFjY2VzcywgU1JTIgoKICAgICAgICAgICAgeWFyZGkgLT4gc3JzYjJiICJzZW5kcyBjcmVkZW50aWFscywgTUlUUyBYTUwiCiAgICAgICAgICAgIG1yaSAtPiBzcnNiMmIgInNlbmRzIGNyZWRlbnRpYWxzLCBNSVRTIFhNTCIKICAgICAgICAgICAgYXBwZm9saW8gLT4gc3JzYjJiICJzZW5kcyBjcmVkZW50aWFscywgTUlUUyBYTUwiCiAgICAgICAgICAgIG1scyAtPiBhcHBzbXlyZW50YWwgInZlcmlmaWVzIGlkZW50aXR5LCBTQU1MLCB2YWxpZGF0ZXMgYWNjZXNzLCBNUiIKICAgICAgICAgICAgZHluIC0+IHNyc2R5biAidmVyaWZpZXMgQXBwIGlkZW50aXR5LCBBenVyZSBNMk0iCgogICAgICAgICAgICBib3BvcnRhbHVpIC0+IHBwb3J0YWx1aSAicmVkaXJlY3RzIHdpdGggcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGJvcG9ydGFsdWkgLT4gZG11aSAicmVkaXJlY3RzIHdpdGggcGVybWlzc2lvbnMiCiAgICAgICAgICAgIGJvcG9ydGFsdWkgLT4gY3JpbXNhZmV1aXVpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiB0c3VpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiBtdHVpICJyZWRpcmVjdHMgd2l0aCBwZXJtaXNzaW9ucyIKICAgICAgICAgICAgYm9wb3J0YWwgLT4gZWlkICJ2YWxpZGF0ZXMgdG9rZW4iCgogICAgICAgICAgICBwcG9ydGFsdWkgLT4gcHBvcnRhbCAiZ2V0cyBsb2NhbCBhdXRoIHRva2VuIgogICAgICAgICAgICBkbXVpIC0+IGRtICJnZXRzIGxvY2FsIGF1dGggdG9rZW4iCiAgICAgICAgICAgIGNyaW1zYWZldWl1aSAtPiBjcmltc2FmZXVpICJnZXRzIGxvY2FsIGF1dGggdG9rZW4iCiAgICAgICAgICAgIHRzdWkgLT4gdHMgImdldHMgbG9jYWwgYXV0aCB0b2tlbiIKICAgICAgICAgICAgbXR1aSAtPiBtdCAiZ2V0cyBsb2NhbCBhdXRoIHRva2VuIgogICAgICAgICAgICAKICAgICAgICAgICAgb3NkYiAtPiBib3BvcnRhbCAiZ2V0cyBjcmVkZW50aWFscywgcGVybWlzc2lvbnMiCiAgICAgICAgICAgIHBwb3J0YWwgLT4gb3NkYiAicGVyc2lzdHMgY3JlZGVudGlhbHMsIHBlcm1pc3Npb25zIgoKICAgICAgICAgICAgc3VwcG9ydCAtPiBib3BvcnRhbHVpICJzZW5kcyBpZCB0b2tlbiIKICAgICAgICAgICAgYm9wb3J0YWx1aSAtPiBib3BvcnRhbCAidmVyaWZpZXMgaWRlbnRpdHksIHZhbGlkYXRlcyBhY2Nlc3MiCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gYm9wb3J0YWx1aSAic2VuZHMgaWQgdG9rZW4iCgogICAgICAgICAgICBzdXBwb3J0IC0+IGVpZCAidmVyaWZpZXMgaWRlbnRpdHksIGdldHMgdG9rZW4iCiAgICAgICAgICAgIGFjY21hbmFnZXIgLT4gZWlkICJ2ZXJpZmllcyBpZGVudGl0eSwgZ2V0cyB0b2tlbiIKCiAgICAgICAgICAgIG1sc2FnZW50IC0+IG1scyAidmVyaWZpZXMgaWRlbnRpdHksIFNBTUwiCiAgICAgICAgICAgIG1sc2FnZW50IC0+IG1ya3QgInB1YmxpYyBhY2Nlc3MiCgogICAgICAgICAgICAvLyBBdXRoMAogICAgICAgICAgICBjbGllbnQgLT4gc3JzZG9tYWluCiAgICAgICAgICAgIHNyc2RvbWFpbiAtPiBhdXRoMAogICAgICAgICAgICBhdXRoMCAtPiBhdXRoMAogICAgICAgICAgICBhdXRoMCAtPiBjbGllbnRicndyawogICAgICAgICAgICBhdXRoMCAtPiBzcnNkb21haW4KICAgICAgICAgICAgc3JzZG9tYWluIC0+IHNyc2RvbWFpbgogICAgICAgICAgICBzcnNkb21haW4gLT4gY2xpZW50YnJvd3NlcgoKICAgICAgICAgICAgY2xpZW50IC0+IG9iZG9tYWluCiAgICAgICAgICAgIG9iZG9tYWluIC0+IGF1dGgwCiAgICAgICAgICAgIGF1dGgwIC0+IG9iZG9tYWluCiAgICAgICAgICAgIG9iZG9tYWluIC0+IG9iZG9tYWluCiAgICAgICAgICAgIG9iZG9tYWluIC0+IGNsaWVudGJyYXBwCiAgICAgICAgfQogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1jb250ZXh0IHNyc3N5c3RlbSAiU3lzdGVtQ29udGV4dCIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSBhdXRoMCBzcnNkb21haW4gb2Jkb21haW4gY2xpZW50YnJvd3NlciBjbGllbnRicmFwcCBjbGllbnRicndyawogICAgICAgIH0KICAgICAgIAogICAgICAgIGNvbnRhaW5lciBzcnNzeXN0ZW0gIkNvbnRhaW5lckRpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGV4Y2x1ZGUgYXV0aDAgc3JzZG9tYWluIG9iZG9tYWluIGNsaWVudGJyb3dzZXIgY2xpZW50YnJhcHAgY2xpZW50YnJ3cmsgY2xpZW50IHNsbCBjdXN0b21lciBzdXBwb3J0IGFjY21hbmFnZXIgbWxzYWdlbnQgcG1zdXNlciBpdXNlciB5YXJkaSBtcmkgYXBwZm9saW8gbWxzIGR5biBlaWQKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgZHluYW1pYyBzcnNzeXN0ZW0gewogICAgICAgICAgICB0aXRsZSAiU1NPIGZsb3cgV2ViIEJhc2VkIEFwcHMiCiAgICAgICAgICAgIAogICAgICAgICAgICBjbGllbnQgLT4gc3JzZG9tYWluICJCcm93c2VzIHRvIgogICAgICAgICAgICBzcnNkb21haW4gLT4gYXV0aDAgIlJlZGlyZWN0cyB0byIKICAgICAgICAgICAgYXV0aDAgLT4gYXV0aDAgIlVzZXIgbG9ncyBpbiIKICAgICAgICAgICAgYXV0aDAgLT4gY2xpZW50YnJ3cmsgIlN0b3JlcyBDb29raWUiCiAgICAgICAgICAgIGF1dGgwIC0+IHNyc2RvbWFpbiAiU2VuZHMgdG9rZW4gYW5kIHJlZGlyZWN0cyIKICAgICAgICAgICAgc3JzZG9tYWluIC0+IHNyc2RvbWFpbiAiVXNlcyBUb2tlbiB0byBBdXRoZW50aWNhdGUiCiAgICAgICAgICAgIHNyc2RvbWFpbiAtPiBjbGllbnRicm93c2VyICJTdG9yZXMgUlMgQ29va2llIgoKICAgICAgICAgICAgY2xpZW50IC0+IG9iZG9tYWluICJCcm93c2VzIHRvIgogICAgICAgICAgICBvYmRvbWFpbiAtPiBhdXRoMCAiUmVkaXJlY3RzIHRvIgogICAgICAgICAgICBhdXRoMCAtPiBhdXRoMCAiQ29va2llIGlzIGF2YWlsYWJsZSIKICAgICAgICAgICAgYXV0aDAgLT4gb2Jkb21haW4gIlNlbmRzIHRva2VuIGFuZCByZWRpcmVjdHMiCiAgICAgICAgICAgIG9iZG9tYWluIC0+IG9iZG9tYWluICJVc2VzIFRva2VuIHRvIEF1dGhlbnRpY2F0ZSIKICAgICAgICAgICAgb2Jkb21haW4gLT4gY2xpZW50YnJhcHAgIlN0b3JlcyBPQiBDb29raWUiCgogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgICAgICBmb250U2l6ZSAyMgogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDdXN0b21lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQmFuayBTdGFmZiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJFeGlzdGluZyBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5OTk5OQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIEJyb3dzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJNb2JpbGUgQXBwIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VMYW5kc2NhcGUKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb21wb25lbnQiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzg1YmJmMAogICAgICAgICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkZhaWxvdmVyIiB7CiAgICAgICAgICAgICAgICBvcGFjaXR5IDI1CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiS2V5VmF1bHQiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICAgICAgc2hhcGUgRm9sZGVyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUXVldWUiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFBpcGUKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIAogICAgICAgIHRoZW1lIGh0dHBzOi8vc3RhdGljLnN0cnVjdHVyaXpyLmNvbS90aGVtZXMvbWljcm9zb2Z0LWF6dXJlLTIwMjEuMDEuMjYvdGhlbWUuanNvbgogICAgfQp9"
   },
   "views" : {
     "configuration" : {
@@ -859,87 +956,87 @@
         "width" : 3691
       },
       "elements" : [ {
-        "id" : "22",
+        "id" : "27",
         "x" : 924,
         "y" : 1290
       }, {
-        "id" : "23",
+        "id" : "28",
         "x" : 2964,
         "y" : 655
       }, {
-        "id" : "24",
+        "id" : "29",
         "x" : 244,
         "y" : 200
       }, {
-        "id" : "25",
+        "id" : "30",
         "x" : 239,
         "y" : 680
       }, {
-        "id" : "26",
+        "id" : "31",
         "x" : 1829,
         "y" : 670
       }, {
-        "id" : "27",
+        "id" : "32",
         "x" : 2974,
         "y" : 1285
       }, {
-        "id" : "29",
+        "id" : "34",
         "x" : 3000,
         "y" : 3355
       }, {
-        "id" : "30",
+        "id" : "35",
         "x" : 2989,
         "y" : 2490
       }, {
-        "id" : "31",
+        "id" : "36",
         "x" : 919,
         "y" : 2535
       }, {
-        "id" : "32",
+        "id" : "37",
         "x" : 929,
         "y" : 1895
       }, {
-        "id" : "33",
+        "id" : "38",
         "x" : 2065,
         "y" : 2920
       }, {
-        "id" : "34",
+        "id" : "39",
         "x" : 2059,
         "y" : 2475
       }, {
-        "id" : "35",
+        "id" : "40",
         "x" : 2069,
         "y" : 3375
       }, {
-        "id" : "36",
+        "id" : "41",
         "x" : 2084,
         "y" : 4000
       }, {
-        "id" : "37",
+        "id" : "42",
         "x" : 909,
         "y" : 3370
       }, {
-        "id" : "38",
+        "id" : "43",
         "x" : 929,
         "y" : 4005
       }, {
-        "id" : "39",
+        "id" : "44",
         "x" : 349,
         "y" : 3370
       }, {
-        "id" : "40",
+        "id" : "45",
         "x" : 339,
         "y" : 4000
       }, {
-        "id" : "41",
+        "id" : "46",
         "x" : 1494,
         "y" : 3380
       }, {
-        "id" : "42",
+        "id" : "47",
         "x" : 1479,
         "y" : 4000
       }, {
-        "id" : "43",
+        "id" : "48",
         "x" : 2044,
         "y" : 1895
       } ],
@@ -947,45 +1044,39 @@
       "key" : "ContainerDiagram",
       "order" : 2,
       "relationships" : [ {
-        "id" : "28"
+        "id" : "33"
       }, {
-        "id" : "44",
+        "id" : "49",
         "vertices" : [ {
           "x" : 2161,
           "y" : 1669
         } ]
       }, {
-        "id" : "45",
+        "id" : "50",
         "vertices" : [ {
           "x" : 3085,
           "y" : 1793
         } ]
       }, {
-        "id" : "46",
+        "id" : "51",
         "vertices" : [ {
           "x" : 2164,
           "y" : 1370
         } ]
       }, {
-        "id" : "47",
+        "id" : "52",
         "vertices" : [ {
           "x" : 2618,
           "y" : 2145
         } ]
       }, {
-        "id" : "48"
+        "id" : "53"
       }, {
-        "id" : "49"
+        "id" : "54"
       }, {
-        "id" : "75"
+        "id" : "80"
       }, {
-        "id" : "76"
-      }, {
-        "id" : "77"
-      }, {
-        "id" : "78"
-      }, {
-        "id" : "79"
+        "id" : "81"
       }, {
         "id" : "82"
       }, {
@@ -993,36 +1084,58 @@
       }, {
         "id" : "84"
       }, {
-        "id" : "85"
-      }, {
-        "id" : "86"
-      }, {
         "id" : "87"
       }, {
         "id" : "88"
       }, {
+        "id" : "89"
+      }, {
         "id" : "90"
+      }, {
+        "id" : "91"
+      }, {
+        "id" : "92"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "95"
       } ],
-      "softwareSystemId" : "21"
+      "softwareSystemId" : "26"
     } ],
     "dynamicViews" : [ {
       "dimensions" : {
-        "height" : 2135,
-        "width" : 1907
+        "height" : 2540,
+        "width" : 3614
       },
-      "elementId" : "21",
+      "elementId" : "26",
       "elements" : [ {
         "id" : "1",
-        "x" : 199,
-        "y" : 165
+        "x" : 1630,
+        "y" : 1905
       }, {
         "id" : "15",
-        "x" : 300,
-        "y" : 1595
+        "x" : 1610,
+        "y" : 356
       }, {
-        "id" : "22",
-        "x" : 1194,
-        "y" : 705
+        "id" : "16",
+        "x" : 471,
+        "y" : 1049
+      }, {
+        "id" : "17",
+        "x" : 1545,
+        "y" : 1520
+      }, {
+        "id" : "18",
+        "x" : 1795,
+        "y" : 1325
+      }, {
+        "id" : "19",
+        "x" : 1565,
+        "y" : 1120
+      }, {
+        "id" : "20",
+        "x" : 2695,
+        "y" : 1036
       } ],
       "externalBoundariesVisible" : false,
       "generatedKey" : true,
@@ -1030,26 +1143,121 @@
       "order" : 3,
       "relationships" : [ {
         "description" : "Browses to",
-        "id" : "50",
+        "id" : "102",
         "order" : "1",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1100,
+          "y" : 1895
+        } ]
       }, {
         "description" : "Redirects to",
-        "id" : "97",
+        "id" : "103",
         "order" : "2",
-        "response" : false
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1145,
+          "y" : 698
+        } ]
       }, {
-        "description" : "Either user logs in, or cookies is available",
-        "id" : "99",
+        "description" : "User logs in",
+        "id" : "104",
         "order" : "3",
         "response" : false,
         "vertices" : [ {
-          "x" : 1609,
-          "y" : 1325
+          "x" : 1285,
+          "y" : 528
         }, {
-          "x" : 1604,
-          "y" : 1875
+          "x" : 1660,
+          "y" : 193
         } ]
+      }, {
+        "description" : "Stores Cookie",
+        "id" : "105",
+        "order" : "4",
+        "response" : false
+      }, {
+        "description" : "Sends token and redirects",
+        "id" : "106",
+        "order" : "5",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 1440,
+          "y" : 978
+        } ]
+      }, {
+        "description" : "Uses Token to Authenticate",
+        "id" : "107",
+        "order" : "6",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 294,
+          "y" : 1461
+        }, {
+          "x" : 290,
+          "y" : 938
+        } ]
+      }, {
+        "description" : "Stores RS Cookie",
+        "id" : "108",
+        "order" : "7",
+        "response" : false
+      }, {
+        "description" : "Browses to",
+        "id" : "109",
+        "order" : "8",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2640,
+          "y" : 1860
+        } ]
+      }, {
+        "description" : "Redirects to",
+        "id" : "110",
+        "order" : "9",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2270,
+          "y" : 993
+        } ]
+      }, {
+        "description" : "Cookie is available",
+        "id" : "104",
+        "order" : "10",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2420,
+          "y" : 568
+        }, {
+          "x" : 2045,
+          "y" : 223
+        } ]
+      }, {
+        "description" : "Sends token and redirects",
+        "id" : "111",
+        "order" : "11",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 2515,
+          "y" : 718
+        } ]
+      }, {
+        "description" : "Uses Token to Authenticate",
+        "id" : "112",
+        "order" : "12",
+        "response" : false,
+        "vertices" : [ {
+          "x" : 3315,
+          "y" : 1453
+        }, {
+          "x" : 3315,
+          "y" : 923
+        } ]
+      }, {
+        "description" : "Stores OB Cookie",
+        "id" : "113",
+        "order" : "13",
+        "response" : false
       } ],
       "title" : "SSO flow Web Based Apps"
     } ],
@@ -1115,7 +1323,7 @@
         "x" : 199,
         "y" : 2974
       }, {
-        "id" : "21",
+        "id" : "26",
         "x" : 2259,
         "y" : 1974
       } ],
@@ -1123,51 +1331,51 @@
       "key" : "SystemContext",
       "order" : 1,
       "relationships" : [ {
-        "id" : "16"
+        "id" : "101"
       }, {
-        "id" : "17"
+        "id" : "21"
       }, {
-        "id" : "18"
+        "id" : "22"
       }, {
-        "id" : "19"
+        "id" : "23"
       }, {
-        "id" : "20"
+        "id" : "24"
       }, {
-        "id" : "51"
+        "id" : "25"
       }, {
-        "id" : "53"
+        "id" : "56"
       }, {
-        "id" : "55"
-      }, {
-        "id" : "57"
+        "id" : "58"
       }, {
         "id" : "60"
       }, {
         "id" : "62"
       }, {
-        "id" : "64"
+        "id" : "65"
       }, {
-        "id" : "66"
+        "id" : "67"
       }, {
-        "id" : "68"
+        "id" : "69"
       }, {
-        "id" : "70"
+        "id" : "71"
       }, {
-        "id" : "72"
+        "id" : "73"
       }, {
-        "id" : "74"
+        "id" : "75"
       }, {
-        "id" : "81"
+        "id" : "77"
       }, {
-        "id" : "92"
+        "id" : "79"
       }, {
-        "id" : "93"
+        "id" : "86"
       }, {
-        "id" : "94"
+        "id" : "97"
       }, {
-        "id" : "96"
+        "id" : "98"
+      }, {
+        "id" : "99"
       } ],
-      "softwareSystemId" : "21"
+      "softwareSystemId" : "26"
     } ]
   }
 }

@@ -21,7 +21,13 @@ container <name> [description] [technology] [tags] {
         mls = softwareSystem "MLS" "Platform for sharing real estate listings" "External PMS system"
         dyn = softwareSystem "Dynamics" "SafeRent CRM"
         eid = softwareSystem "Microsoft Entra ID" "SafeRentSolutions tenant" "Azure" 
-        auth0 = softwareSystem "Auth0" "Authentication server"
+        
+        auth0 = softwareSystem "auth.saferentsolutions.com" "Authentication server"
+        srsdomain = softwareSystem "residentscreening.net" "SRSWeb portal"
+        clientbrowser = softwareSystem "Browser Cookie Storage" "Client Browser" "Web Browser"
+        clientbrapp = softwareSystem "Browser Local Storage" "Client Browser" "Web Browser"
+        clientbrwrk = softwareSystem "Browser Worker Storage" "Client Browser" "Web Browser"
+        obdomain = softwareSystem "onlinebilling.saferentsolutions.com" "Billing portal"
 
         pmsuser -> yardi "verifies identity, Forms"
         pmsuser -> appfolio "verifies identity, Forms"
@@ -199,27 +205,51 @@ container <name> [description] [technology] [tags] {
             mlsagent -> mrkt "public access"
 
             // Auth0
-            srsweb -> auth0
+            client -> srsdomain
+            srsdomain -> auth0
             auth0 -> auth0
+            auth0 -> clientbrwrk
+            auth0 -> srsdomain
+            srsdomain -> srsdomain
+            srsdomain -> clientbrowser
+
+            client -> obdomain
+            obdomain -> auth0
+            auth0 -> obdomain
+            obdomain -> obdomain
+            obdomain -> clientbrapp
         }
     }
 
     views {
         systemcontext srssystem "SystemContext" {
             include *
-            exclude auth0
+            exclude auth0 srsdomain obdomain clientbrowser clientbrapp clientbrwrk
         }
        
         container srssystem "ContainerDiagram" {
             include *
-            exclude auth0 client sll customer support accmanager mlsagent pmsuser iuser yardi mri appfolio mls dyn eid
+            exclude auth0 srsdomain obdomain clientbrowser clientbrapp clientbrwrk client sll customer support accmanager mlsagent pmsuser iuser yardi mri appfolio mls dyn eid
         }
         
         dynamic srssystem {
             title "SSO flow Web Based Apps"
-            client -> srsweb "Browses to"
-            srsweb -> auth0 "Redirects to"
-            auth0 -> auth0 "Either user logs in, or cookies is available"
+            
+            client -> srsdomain "Browses to"
+            srsdomain -> auth0 "Redirects to"
+            auth0 -> auth0 "User logs in"
+            auth0 -> clientbrwrk "Stores Cookie"
+            auth0 -> srsdomain "Sends token and redirects"
+            srsdomain -> srsdomain "Uses Token to Authenticate"
+            srsdomain -> clientbrowser "Stores RS Cookie"
+
+            client -> obdomain "Browses to"
+            obdomain -> auth0 "Redirects to"
+            auth0 -> auth0 "Cookie is available"
+            auth0 -> obdomain "Sends token and redirects"
+            obdomain -> obdomain "Uses Token to Authenticate"
+            obdomain -> clientbrapp "Stores OB Cookie"
+
         }
 
         styles {
